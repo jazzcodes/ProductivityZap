@@ -18,3 +18,4 @@ function openGlobalMenu()
 
 globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
 globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
+
