@@ -3,12 +3,126 @@
 }
 
 :root{
-
+    --primary-0:#FFFFFF;
+    --primary-100:#E7DEFE;
+    --secondary-300:#90A3BF;
+    --secondary-100:#E0E9F4;
+    --secondary-200:#C3D4E9;
+    --secondary-400:#596780;
 }
 
 
-html{
-    
+html{  
     font-size: 62.5%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+body{
+  height: 100vh;
+}
+
+button{
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    background-color: var(--primary-0);
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Header */
+
+header{
+    margin:2rem;
+    min-width: 100vw;
+    border: 2px solid pink;
+}
+
+nav{
+    border: 2px solid purple;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.nav__right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.nav__right__global-menu-btn
+{
+    width: 23px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.nav__right__settings-btn{
+    width: 23px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.nav__right__user-profile__dropdown-btn
+{
+    cursor: pointer;
+}
+
+.nav__right__user-profile
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global__menu__close-btn{
+    padding: 0;
+}
+
+.nav__right__global-menu--open{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border:2px solid yellowgreen;
+    border-radius: 1rem;
+    min-width: 150px;
+    padding: 1rem;
+    position: fixed;
+    right: 2.2rem;
+    top: 8.5rem;
+    display: none;
+}
+
+@media screen and (min-width:1024px)
+{
+    .nav__right{
+        gap:2rem;
+    }
+
+   .nav__right__user-profile{
+    gap: 1rem;
+}
+}
+
+/* Main */
+
+main{
+    margin:2rem;
+    padding: 1rem;
+}
+
+#main-page{
+    border: 2px solid red;
 }
