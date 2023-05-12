@@ -12,15 +12,15 @@ let inputTask=document.getElementById("add-task");
 
 // fetch data
 
-async function loadData()
-{
-    let{data:task, error}= await supabase.from("todo").select("*");
-    console.log(error);
-    console.log(task);
+// async function loadData()
+// {
+//     let{data:todo, error}= await supabase.from("todo").select("*");
+//     console.log(error);
+//     console.log(todo);
     
-}
+// }
 
-loadData();
+// loadData();
 
 inputTask.addEventListener("keypress", async function insertData(event)
 {
@@ -29,7 +29,7 @@ inputTask.addEventListener("keypress", async function insertData(event)
     event.preventDefault();
     let taskEntered=inputTask.value;
     console.log(taskEntered);
-    const {data, error}= await supabase.from("todo").insert([{
+    const {data:todo, error}= await supabase.from("todo").insert([{
         task:taskEntered
     }]);
 
@@ -38,6 +38,25 @@ inputTask.addEventListener("keypress", async function insertData(event)
 
 });
 
+
+
+let{data:todo, error}= await supabase.from("todo").select("*");
+console.log(todo);
+console.log(error);
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Menu */
 
 const globalMenu=document.querySelector(".nav__right__global-menu--open");
 const globalMenuCloseBtn=document.querySelector(".global__menu__close-btn");
