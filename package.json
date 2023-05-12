@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "node-sass --include-path scss styles.scss css/styles.css",
+    "watch": "nodemon -e scss -x 'npm run css'"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.2.1",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8"
   }
 }
