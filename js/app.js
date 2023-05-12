@@ -22,21 +22,21 @@ let inputTask=document.getElementById("add-task");
 
 // loadData();
 
-inputTask.addEventListener("keypress", async function insertData(event)
-{
-   if(event.key==="Enter")
-   {
-    event.preventDefault();
-    let taskEntered=inputTask.value;
-    console.log(taskEntered);
-    const {data:todo, error}= await supabase.from("todo").insert([{
-        task:taskEntered
-    }]);
+// inputTask.addEventListener("keypress", async function insertData(event)
+// {
+//    if(event.key==="Enter")
+//    {
+//     event.preventDefault();
+//     let taskEntered=inputTask.value;
+//     console.log(taskEntered);
+//     const {data:todo, error}= await supabase.from("todo").insert([{
+//         task:taskEntered
+//     }]);
 
-   }
+//    }
 
 
-});
+// });
 
 
 
@@ -58,6 +58,8 @@ console.log(error);
 
 /* Global Menu */
 
+
+
 const globalMenu=document.querySelector(".nav__right__global-menu--open");
 const globalMenuCloseBtn=document.querySelector(".global__menu__close-btn");
 const globalMenuOpenBtn=document.querySelector(".nav__right__global-menu-btn");
@@ -66,11 +68,13 @@ const globalMenuOpenBtn=document.querySelector(".nav__right__global-menu-btn");
 function closeGlobalMenu()
 {
     globalMenu.style.display="none";
+    console.log("global menu closed");
 }
 
 function openGlobalMenu()
 {
     globalMenu.style.display="flex";
+    console.log("global menu opened");
 }
 
 
