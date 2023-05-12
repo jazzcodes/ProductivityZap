@@ -3,14 +3,14 @@
 }
 
 :root{
-    --primary-0:#FFFFFF;
-    --primary-100:#E7DEFE;
-    --primary-200:#CEBEFE;
-    --primary-500:#7C5CFC;
-    --secondary-300:#90A3BF;
-    --secondary-100:#E0E9F4;
-    --secondary-200:#C3D4E9;
-    --secondary-400:#596780;
+    --primary-0: #FFFFFF;
+    --primary-100: #E7DEFE;
+    --primary-200: #CEBEFE;
+    --primary-500: #7C5CFC;
+    --secondary-300: #90A3BF;
+    --secondary-100: #E0E9F4;
+    --secondary-200: #C3D4E9;
+    --secondary-400: #596780;
 }
 
 
@@ -110,7 +110,7 @@ nav{
 
 .global__menu__close-btn{
     padding: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem ;
     background-color: var(--primary-500);
 }
 
