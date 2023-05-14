@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+// import { check } from 'prettier';
 
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94dnlteW51aHZ0dnhoaHV4ZW9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODM4MDQ5NjQsImV4cCI6MTk5OTM4MDk2NH0.glQRUBx4EcVkh96LnCrxcoP0OnmSAqhk3c9cswgMG5U";
 const url = "https://oxvymynuhvtvxhhuxeoi.supabase.co";
@@ -9,47 +10,144 @@ console.log(supabase);
 // To-do
 
 let inputTask = document.getElementById("add-task");
-
-// fetch data
-
-// async function loadData()
-// {
-//     let{data:todo, error}= await supabase.from("todo").select("*");
-//     console.log(error);
-//     console.log(todo);
-
-// }
-
-// loadData();
-
-// inputTask.addEventListener("keypress", async function insertData(event)
-// {
-//    if(event.key==="Enter")
-//    {
-//     event.preventDefault();
-//     let taskEntered=inputTask.value;
-//     console.log(taskEntered);
-//     const {data:todo, error}= await supabase.from("todo").insert([{
-//         task:taskEntered
-//     }]);
-
-//    }
+const tasksList = document.querySelector(".tasks");
 
 
-// });
+// fetch data from supabase & display
 
+async function loadData() {
+    let { data: todo, error } = await supabase.from("todo").select("*");
+    console.log(error);
+    console.log(todo);
 
-
-let { data: todo, error } = await supabase.from("todo").select("*");
-console.log(todo);
-console.log(error);
+    todo.forEach((task) => {
+        console.log(task.id);
+        console.log(task.task);
+        tasksList.innerHTML += `
+        <li id=${task.id} class="task"> <div class="task-check"><input type="checkbox" class="done" name="${task.id}" id=""> <p class="strikethrough"> ${task.task} </p> </div><button id="delete-task" name=${task.id}>Delete</button></li>
+         
+        `;
 
 
 
 
+        // done status
+        const doneTask = document.querySelectorAll(".done"); // checkboxes
+        const strikethrough = document.querySelectorAll(".strikethrough");
+        doneTask.forEach((done) => {
+            done.addEventListener("change", () => {
+
+                console.log(done.checked);
+                const taskID = done.name;
+                console.log("status changed ID:", taskID);
+
+                async function handleDone() {
+                    const { data: doneData, error: doneError } = await supabase
+                        .from('todo')
+                        .update({ done: done.checked })
+                        .eq('id', taskID);
 
 
 
+                }
+
+
+                handleDone();
+                // strikethrough.forEach((p) => {
+                //     if (task.done) {
+                //         p.style.textDecoration = "line-through";
+                //         p.style.color = "white";
+                //     }
+                //     else {
+                //         p.style.textDecoration = "none";
+                //         p.style.color = "black";
+                //     }
+                // });
+
+
+            });
+
+        }
+
+
+        );
+
+        // console.log(task.done);
+
+        const deleteBtn = document.querySelectorAll("#delete-task");
+        // console.log(deleteBtn);
+
+
+        deleteBtn.forEach((del) => {
+            del.addEventListener("click", async function handleDelete(e) {
+
+                e.preventDefault();
+
+                const { data: deleteData, error: deleteError } = await supabase
+                    .from('todo')
+                    .delete()
+                    .eq('id', deleteBtn.name);
+
+                console.log("deleted");
+
+                const task = document.querySelectorAll(".task");
+                task.forEach((t) => {
+                    if (t.id == deleteBtn.name) {
+                        taskList.remove(task);
+                    }
+
+                });
+
+
+            });
+
+
+        });
+
+    }
+
+
+    );
+
+    inputTask.value = "";
+
+    // // Strikethrough
+
+    // const doneTask = document.querySelectorAll(".done");
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+// insert data to supabase
+
+inputTask.addEventListener("keypress", async function insertData(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        let taskEntered = inputTask.value;
+        console.log(taskEntered);
+        const { data: todo, error } = await supabase.from("todo").insert([{
+            task: taskEntered
+        }]
+
+        );
+        location.reload();
+    }
+
+});
+
+
+loadData();
 
 
 
