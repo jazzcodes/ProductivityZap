@@ -6,6 +6,36 @@ const url = "https://oxvymynuhvtvxhhuxeoi.supabase.co";
 const supabase = createClient(url, key);
 console.log(supabase);
 
+
+
+/* Global Menu */
+
+
+
+const globalMenu = document.querySelector(".nav__right__global-menu--open");
+const globalMenuCloseBtn = document.querySelector(".global__menu__close-btn");
+const globalMenuOpenBtn = document.querySelector(".nav__right__global-menu-btn");
+
+
+function closeGlobalMenu() {
+    globalMenu.style.display = "none";
+    console.log("global menu closed");
+}
+
+function openGlobalMenu() {
+    globalMenu.style.display = "flex";
+    console.log("global menu opened");
+}
+
+
+
+
+globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
+globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
+
+
+
+
 // To-do
 
 const inputTask = document.getElementById("add-task");
@@ -154,6 +184,12 @@ async function loadData() {
 }
 
 
+
+
+
+
+
+
 // insert data to supabase
 
 inputTask.addEventListener("keypress", async function insertData(event) {
@@ -176,31 +212,4 @@ inputTask.addEventListener("keypress", async function insertData(event) {
 loadData();
 
 
-
-
-
-/* Global Menu */
-
-
-
-const globalMenu = document.querySelector(".nav__right__global-menu--open");
-const globalMenuCloseBtn = document.querySelector(".global__menu__close-btn");
-const globalMenuOpenBtn = document.querySelector(".nav__right__global-menu-btn");
-
-
-function closeGlobalMenu() {
-    globalMenu.style.display = "none";
-    console.log("global menu closed");
-}
-
-function openGlobalMenu() {
-    globalMenu.style.display = "flex";
-    console.log("global menu opened");
-}
-
-
-
-
-globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
-globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
 
