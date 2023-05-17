@@ -1,0 +1,77 @@
+
+/* To-do List */
+#to-do-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  
+  #add-task {
+    min-width: 300px;
+    min-height: 40px;
+    padding: 1rem;
+    font-size: 1.5rem; 
+    color: var(--secondary-300);
+    border:0;
+    outline:none;
+    border: 2px solid var(--primary-500);
+  }
+  
+  #add-task::placeholder {
+    /* padding: 1rem; */ }
+  
+  
+  .tasks{
+    list-style: none;
+    padding-left: 0;
+    /* padding: 1rem; */
+  
+    }
+  
+    .todo__heading{
+      color: var(--secondary-700);
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+  
+  
+    .del-icon{
+      width: 20px;
+      height: 20px;
+    }
+  
+  .tasks li{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--secondary-100);
+    color: var(--secondary-300);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .task button{
+    background-color: var(--secondary-100);
+  }
+  
+  input[type="checkbox"]
+  {
+    accent-color: var(--primary-500);
+  }
+  
+  /* 
+  .strikethrough{
+    text-decoration: none;
+  } */
+  
+  input[type=checkbox]:checked + p {
+    /* color:red; */
+    text-decoration: line-through;
+  }
+  
+  .task-check{
+    display: flex;
+    gap: 1rem;
+  }
+  
+  
