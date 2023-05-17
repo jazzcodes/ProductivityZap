@@ -721,6 +721,81 @@
 
 }
 
+// pomodoro
+
+#pomodoro-container{
+  
+  @include flexColumn-alignItemsOnlyCenter();
+ 
+
+
+  justify-content: center;
+  .pomodoro__heading{
+    text-align: center;
+    color: $secondary-700;
+    font-size: 2.4rem;
+    font-weight: 700;
+
+  }
+
+  .pomodoro__body{
+    @include flexColumn-alignItemsOnlyCenter();
+    justify-content: center;
+    background-color: $primary-100;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+
+    .timer-btns{
+
+      display:flex;
+      gap: 1rem;
+
+      button{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white;
+      
+      }
+
+      #pomodoro{
+        background-color: $primary-300;
+      }
+
+      #short-break{
+        background-color: $primary-400;
+      }
+
+      #long-break{
+        background-color: $primary-500;
+      }
+    }
+  
+    .initial-time{
+      color: $secondary-400;
+      font-weight:700;
+      font-size: 6rem;
+
+    }
+
+    #start-pause{
+      width:100%;
+      color: $primary-500;
+      font-size:1.5rem;
+      padding:1rem;
+      border-radius:0.5rem;
+      font-weight:700;
+      text-transform: uppercase;
+    }
+
+
+
+  }
+
+
+}
 
 
 
