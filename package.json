@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "css": "node-sass --include-path scss styles.scss css/styles.css",
-    "watch": "nodemon -e scss -x 'npm run css'"
+    "watch": "nodemon -e scss -x npm run css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.22.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
@@ -18,16 +24,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
-    "prettier": "^2.8.8",
-    "webpack": "^5.82.1",
-    "webpack-cli": "^5.1.1"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.config.js"
-  },
-  "devDependencies": {
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "prettier": "^2.8.8"
   }
 }
-
