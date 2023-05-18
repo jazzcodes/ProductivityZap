@@ -552,6 +552,17 @@ main {
     color: #0D121F;
     font-size: 2.4rem;
     font-weight: 700; }
+  #pomodoro-container .notification {
+    min-width: 320px;
+    max-width: 320px;
+    background-color: #E7DEFE;
+    color: #7C5CFC;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    border-radius: 0.5rem; }
   #pomodoro-container .pomodoro__body {
     display: flex;
     flex-direction: column;
@@ -559,7 +570,8 @@ main {
     justify-content: center;
     background-color: #E7DEFE;
     padding: 1rem;
-    border-radius: 0.5rem; }
+    border-radius: 0.5rem;
+    min-width: 345px; }
     #pomodoro-container .pomodoro__body .timer-btns {
       display: flex;
       gap: 1rem; }

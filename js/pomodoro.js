@@ -30,6 +30,7 @@ const shortBreakBtn = document.getElementById("short-break");
 const longBreakBtn = document.getElementById("long-break");
 const initialTime = document.querySelector(".initial-time");
 const startPause = document.getElementById("start-pause");
+const notification = document.querySelector(".notification");
 
 function pomodoroSpl() {
 
@@ -68,17 +69,28 @@ function pomodoroSpl() {
         else {
             leadingMinutes = minutes;
         }
+
         if (seconds >= 0 && minutes >= 0) {
 
             initialTime.innerText = `${leadingMinutes}:${leadingSeconds}`;
+            shortBreakBtn.disabled = "true";
+            longBreakBtn.disabled = "true";
+
+
 
         }
         else {
             // initialTime.innerText = "00:00";
             // startPause.innerText = "Restart";
             reset();
+            // notification.style.display = "initial";
+            location.reload();
+
+
 
         }
+
+
 
         // shortBreakBtn.addEventListener("click", () => {
 
@@ -112,7 +124,7 @@ function pomodoroSpl() {
         minutes = 24;
 
 
-        initialTime.innerText = "25:00";
+        // initialTime.innerText = "25:00";
         if (timerStatus == "started") {
             startPause.innerText = `Start`;
             timerStatus = "stopped";
@@ -129,7 +141,9 @@ pomodoroBtn.addEventListener("click", function (e) {
 
     pomodoroSpl();
     initialTime.innerText = "25:00";
-    pomodoroBtn.disabled = "true";
+    // pomodoroBtn.disabled = "true";
+    // shortBreakBtn.disabled = "false";
+    // longBreakBtn.disabled = "false";
 });
 
 
@@ -173,13 +187,15 @@ function shortBreakSpl() {
         if (seconds >= 0 && minutes >= 0) {
 
             initialTime.innerText = `${leadingMinutes}:${leadingSeconds}`;
+            pomodoroBtn.disabled = "true";
+            longBreakBtn.disabled = "true";
 
         }
         else {
             // initialTime.innerText = "00:00";
             // startPause.innerText = "Restart";
             reset();
-
+            location.reload();
 
 
         }
@@ -212,7 +228,7 @@ function shortBreakSpl() {
         minutes = 4;
 
 
-        initialTime.innerText = "05:00";
+        // initialTime.innerText = "05:00";
         if (timerStatus == "started") {
             startPause.innerText = `Start`;
             timerStatus = "stopped";
@@ -228,7 +244,9 @@ shortBreakBtn.addEventListener("click", function (e) {
 
     shortBreakSpl();
     initialTime.innerText = "05:00";
-    shortBreakBtn.disabled = "true";
+    // shortBreakBtn.disabled = "true";
+    // pomodoroBtn.disabled = "false";
+    // longBreakBtn.disabled = "false";
 });
 
 
@@ -272,17 +290,20 @@ function longBreakSpl() {
         if (seconds >= 0 && minutes >= 0) {
 
             initialTime.innerText = `${leadingMinutes}:${leadingSeconds}`;
-
+            pomodoroBtn.disabled = "true";
+            shortBreakBtn.disabled = "true";
         }
         else {
             // initialTime.innerText = "00:00";
             // startPause.innerText = "Restart";
             reset();
-
+            location.reload();
         }
 
         // shortBreakBtn.addEventListener("click", reset);
         // pomodoroBtn.addEventListener("click", reset);
+
+
     }
 
     startPause.addEventListener("click",
@@ -307,7 +328,7 @@ function longBreakSpl() {
         minutes = 14;
 
 
-        initialTime.innerText = "15:00";
+        // initialTime.innerText = "15:00";
         if (timerStatus == "started") {
             startPause.innerText = `Start`;
             timerStatus = "stopped";
@@ -323,5 +344,8 @@ longBreakBtn.addEventListener("click", function (e) {
 
     longBreakSpl();
     initialTime.innerText = "15:00";
-    longBreakBtn.disabled = "true";
+    // longBreakBtn.disabled = "true";
+    // pomodoroBtn.disabled = "false";
+    // shortBreakBtn.disabled = "false";
+
 });
