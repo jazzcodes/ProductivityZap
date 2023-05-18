@@ -38,6 +38,11 @@ globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
 const addNote = document.getElementById("add-note");
 const notesContainer = document.getElementById("sticky-notes-container");
 
+const noteHeading = document.querySelector(".card__heading");
+const noteContent = document.querySelector(".note-area");
+const addNoteBtn = document.querySelector(".card-footer-add");
+const cancelNoteBtn = document.querySelector(".card-footer-cancel");
+
 
 function newNote() {
     // const date = new Date();
@@ -46,21 +51,29 @@ function newNote() {
     // const year = date.getFullYear();
 
     notesContainer.innerHTML += `
-<div class="sticky__card">
-<div class="sticky-initial">
-<p class="card__heading" contenteditable="true">Write note heading here...</p>
-<p class="note-area" contenteditable="true">Write note here...</p>
+    <div class="sticky__card">
+    <div class="sticky-initial">
+    <input type="text" class="card__heading" placeholder="Write note heading here..."></input>
+   
+    <textarea name="" class="note-area" id="" cols="30" rows="8" placeholder="Write note here..."></textarea>
 </div>
-<div class="card__footer"><button class="card-footer-add">Add</button> </div>
+    <div class="card__footer"><button class="card-footer-add">Add</button><button class="card-footer-cancel">Cancel</button></div>
 </div>
 `;
+
+    console.log(cancelNoteBtn);
+
+    cancelNoteBtn.addEventListener("click", () => {
+        location.reload();
+        console.log("reached");
+    });
 
 }
 
 addNote.addEventListener("click", newNote);
 
-const noteHeading = document.querySelector(".card__heading");
-const noteContent = document.querySelector(".note-area");
+
+
 
 
 
