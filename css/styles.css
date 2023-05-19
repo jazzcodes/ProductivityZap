@@ -539,7 +539,7 @@ main {
         border-radius: 0.5rem; }
       #sticky-notes-container .sticky__card .card__footer .note-btns {
         display: flex; }
-        #sticky-notes-container .sticky__card .card__footer .note-btns .edit-note-btn {
+        #sticky-notes-container .sticky__card .card__footer .note-btns .edit-note-btn, #sticky-notes-container .sticky__card .card__footer .note-btns .delete-note-btn {
           /* background-color: var(--primary-500); */
           background-color: #E7DEFE;
           color: white;

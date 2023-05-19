@@ -712,7 +712,7 @@
   .note-btns{
     display: flex;
 
-    .edit-note-btn{
+    .edit-note-btn, .delete-note-btn{
       /* background-color: var(--primary-500); */
       background-color: $primary-100;
       color: white;
@@ -732,6 +732,8 @@
       height: 22px;
       width: 22px;
     }
+
+    
   }
  
   .note-date{

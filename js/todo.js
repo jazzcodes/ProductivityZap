@@ -1,4 +1,7 @@
-// import { supabase } from "../lib/client";
+import { supabase } from "../lib/client.js";
+
+
+
 
 
 /* Global Menu */
@@ -29,152 +32,152 @@ globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
 
 
 
-// // To-do
+// To-do
 
-// const inputTask = document.getElementById("add-task");
-// const tasksList = document.querySelector(".tasks");
+const inputTask = document.getElementById("add-task");
+const tasksList = document.querySelector(".tasks");
 
 
 
 
-// // fetch data from supabase & display
+// fetch data from supabase & display
 
-// async function loadData() {
+async function loadData() {
 
-//     const { data: todo, error } = await supabase.from("todo").select("*");
-//     console.log(error);
-//     console.log(todo);
+    const { data: todo, error } = await supabase.from("todo").select("*");
+    console.log(error);
+    console.log(todo);
 
 
 
-//     todo.forEach((task) => {
-//         console.log(task.id);
-//         console.log(task.task);
+    todo.forEach((task) => {
+        console.log(task.id);
+        console.log(task.task);
 
-//         //display data
+        //display data
 
-//         tasksList.innerHTML += `
-//         <li id=${task.id} class="task"> <div class="task-check"><input type="checkbox" class="done" name="${task.id}" id=""> <p class="strikethrough"> ${task.task} </p> </div><button class="delete-task" name=${task.id}><img src="../images/delete-btn.svg" alt="" class="del-icon"> </button></li>
+        tasksList.innerHTML += `
+        <li id=${task.id} class="task"> <div class="task-check"><input type="checkbox" class="done" name="${task.id}" id=""> <p class="strikethrough"> ${task.task} </p> </div><button class="delete-task" name=${task.id}><img src="../images/delete-btn.svg" alt="" class="del-icon"> </button></li>
 
-//         `;
+        `;
 
 
-//         // handle delete
+        // handle delete
 
-//         const deleteBtns = document.querySelectorAll(".delete-task");
+        const deleteBtns = document.querySelectorAll(".delete-task");
 
-//         deleteBtns.forEach((del) => {
-//             del.addEventListener("click", async function handleDelete() {
-//                 console.log("deleted", del.name);
-//                 const { data: delData, delError } = await supabase
-//                     .from('todo')
-//                     .delete()
-//                     .eq('id', del.name);
+        deleteBtns.forEach((del) => {
+            del.addEventListener("click", async function handleDelete() {
+                console.log("deleted", del.name);
+                const { data: delData, delError } = await supabase
+                    .from('todo')
+                    .delete()
+                    .eq('id', del.name);
 
-//                 location.reload();
+                location.reload();
 
-//             });
+            });
 
 
 
-//         });
+        });
 
 
 
-//         // console.log(tasksList);
-//         const doneTask = document.querySelectorAll(".task .task-check .done"); // checkboxes
-//         console.log(doneTask);
+        // console.log(tasksList);
+        const doneTask = document.querySelectorAll(".task .task-check .done"); // checkboxes
+        console.log(doneTask);
 
-//         async function handleCheck() {
+        async function handleCheck() {
 
-//             console.log(tasksList);
-//             const taskItem = document.querySelectorAll(".task .task-check .done");
-//             console.log(taskItem);
+            console.log(tasksList);
+            const taskItem = document.querySelectorAll(".task .task-check .done");
+            console.log(taskItem);
 
-//             const { data: todoNew, errorNew } = await supabase.from("todo").select("id").eq("done", 'true');
-//             console.log(errorNew);
-//             console.log(todoNew);
+            const { data: todoNew, errorNew } = await supabase.from("todo").select("id").eq("done", 'true');
+            console.log(errorNew);
+            console.log(todoNew);
 
-//             const todoNew2 = todoNew.map(a => a.id);
+            const todoNew2 = todoNew.map(a => a.id);
 
 
-//             taskItem.forEach((t) => {
-//                 console.log(todoNew2);
-//                 console.log("true-btn-name", t.name);
-//                 if (todoNew2.includes(Number(t.name))) {
-//                     console.log(t.name, "is there");
-//                     t.checked = true;
-//                 }
+            taskItem.forEach((t) => {
+                console.log(todoNew2);
+                console.log("true-btn-name", t.name);
+                if (todoNew2.includes(Number(t.name))) {
+                    console.log(t.name, "is there");
+                    t.checked = true;
+                }
 
-//                 else {
-//                     console.log("not there");
-//                 }
-//             }
-//             );
+                else {
+                    console.log("not there");
+                }
+            }
+            );
 
 
 
 
 
-//         }
-//         // done status
-//         doneTask.forEach((done) => {
-//             console.log(done);
+        }
+        // done status
+        doneTask.forEach((done) => {
+            console.log(done);
 
-//             done.addEventListener("change", () => {
+            done.addEventListener("change", () => {
 
 
-//                 console.log("clicked");
-//                 console.log(done.checked);
-//                 const taskID = done.name;
-//                 task.done = done.checked;
+                console.log("clicked");
+                console.log(done.checked);
+                const taskID = done.name;
+                task.done = done.checked;
 
-//                 console.log("status changed ID:", taskID);
+                console.log("status changed ID:", taskID);
 
 
-//                 async function handleDone() {
-//                     const { data: doneData, error: doneError } = await supabase
-//                         .from('todo')
-//                         .update({ done: done.checked })
-//                         .eq('id', taskID);
+                async function handleDone() {
+                    const { data: doneData, error: doneError } = await supabase
+                        .from('todo')
+                        .update({ done: done.checked })
+                        .eq('id', taskID);
 
 
 
-//                 }
+                }
 
-//                 handleDone();
-//                 // handleCheck();
+                handleDone();
+                // handleCheck();
 
-//                 console.log("new status", task.done);
+                console.log("new status", task.done);
 
 
-//             });
+            });
 
 
 
 
-//             handleCheck();
+            handleCheck();
 
 
-//         });
+        });
 
 
 
 
 
-//     });
+    });
 
 
 
 
 
 
-//     inputTask.value = "";
+    inputTask.value = "";
 
 
 
 
-// }
+}
 
 
 
@@ -183,26 +186,26 @@ globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
 
 
 
-// // insert data to supabase
+// insert data to supabase
 
-// inputTask.addEventListener("keypress", async function insertData(event) {
-//     if (event.key === "Enter") {
-//         event.preventDefault();
-//         let taskEntered = inputTask.value;
-//         console.log(taskEntered);
-//         const { data: todo, error } = await supabase.from("todo").insert([{
-//             task: taskEntered
-//         }]
+inputTask.addEventListener("keypress", async function insertData(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        let taskEntered = inputTask.value;
+        console.log(taskEntered);
+        const { data: todo, error } = await supabase.from("todo").insert([{
+            task: taskEntered
+        }]
 
-//         );
-//         location.reload();
-//     }
+        );
+        location.reload();
+    }
 
-// });
+});
 
 
 
-// loadData();
+loadData();
 
 
 
