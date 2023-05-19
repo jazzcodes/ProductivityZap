@@ -501,29 +501,45 @@ main {
     /* background-color: #F3F5F7; */
     background-color: #E7DEFE;
     overflow: auto; }
-    #sticky-notes-container .sticky__card .card__heading {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #7C5CFC;
-      outline: none; }
-    #sticky-notes-container .sticky__card .note-area {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #90A3BF;
-      outline: none; }
+    #sticky-notes-container .sticky__card .sticky-initial {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem; }
+      #sticky-notes-container .sticky__card .sticky-initial .card__heading {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #7C5CFC;
+        outline: none;
+        border: 0;
+        background-color: #E7DEFE; }
+      #sticky-notes-container .sticky__card .sticky-initial .note-area {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #90A3BF;
+        width: 100%;
+        outline: none;
+        border: 0;
+        background-color: #E7DEFE; }
+      #sticky-notes-container .sticky__card .sticky-initial .note-area::placeholder {
+        color: #90A3BF; }
+      #sticky-notes-container .sticky__card .sticky-initial .card__heading::placeholder {
+        color: #7C5CFC; }
     #sticky-notes-container .sticky__card .card__footer {
       display: flex;
-      justify-content: space-between; }
-      #sticky-notes-container .sticky__card .card__footer .card-footer-add {
+      justify-content: space-between;
+      gap: 2rem; }
+      #sticky-notes-container .sticky__card .card__footer .card-footer-add, #sticky-notes-container .sticky__card .card__footer .card-footer-cancel {
         width: 100%;
         font-size: 1.5rem;
         font-weight: 700;
         background-color: #7C5CFC;
         color: white;
-        padding: 1rem; }
+        padding: 1rem;
+        border-radius: 0.5rem; }
       #sticky-notes-container .sticky__card .card__footer .note-btns {
         display: flex; }
-        #sticky-notes-container .sticky__card .card__footer .note-btns .edit-note-btn {
+        #sticky-notes-container .sticky__card .card__footer .note-btns .edit-note-btn, #sticky-notes-container .sticky__card .card__footer .note-btns .delete-note-btn {
           /* background-color: var(--primary-500); */
           background-color: #E7DEFE;
           color: white;
