@@ -12,95 +12,54 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div id="dashboard-root">
-    <header>
-        <nav>
-            <!-- <img src="" alt="" class="logo-btn"> -->
-            <p class="nav__logo gradient-text">ProZap</p>
-            <div class="nav__right">
-            <img src="../images/settings.svg" alt="" class="nav__right__settings-btn">
-            <div class="nav__right__global-menu">
-                <img src="../images/global-menu.svg" alt="" class="nav__right__global-menu-btn">
-            </div>
-            <div class="nav__right__global-menu--open">
-                <button class="global__menu__close-btn"><img src="../images/close-btn.svg" alt=""></button>
-                <p class="global__menu__service"><a href="to-do.html" onclick="route()">To-do List</a></p>
-                <p class="global__menu__service"><a href="pomodoro.html" onclick="route()">Pomodoro</a></p>
-                <p class="global__menu__service"><a href="time-tracker.html" onclick="route()">Time Tracker</a></p>
-                <p class="global__menu__service"><a href="sticky-notes.html" onclick="route()">Sticky Notes</a></p>
-            </div>
-            <div class="nav__right__user-profile">
-                <p class="nav__right__user-profile__user-name">Jasleen</p>
-                <img src="../images/arrow-down.svg" alt="" class="nav__right__user-profile__dropdown-btn">
-            </div>
-        </div>
+    <header class="dashboard-header">
+        <nav class="dashboard-mobile-nav">
+            <img src="../images/mobile-menu.svg" alt="" class="dashboard-mobile-menu-icon">
 
+            <div class="dashboard-open-mobile-menu">
+                <ul>
+                    <button class="global__menu__close-btn"><img src="../images/close-btn.svg" alt=""></button>
+                    <a href="../index.html"><img src="../images/logo.png" alt="" class="dashboard-logo"></a>
+                    <li><img src="../images/global-menu.svg" alt=""><a href="../pages/dashboard.html">Dashboard</a></li>
+                    <li><img src="../images/todo.svg" alt=""><a href="../pages/to-do.html">Todo List</a></li>
+                    <li><img src="../images/notes.svg" alt=""><a href="../pages/sticky-notes.html">Sticky Notes</a></li>
+                    <li><img src="../images/pomodoro.svg" alt=""><a href="../pages/pomodoro.html">Pomodoro</a></li>
+                    <li><img src="../images/timer.svg" alt=""><a href="../pages/time-tracker.html">Timer</a></li>
+                    <li><img src="../images/gift.svg" alt=""><a href="../pages/additional.html">Additional</a></li>
+                </ul>
+            </div>
+            <a href="../index.html"><img src="../images/logo.png" alt="" class="dashboard-logo dashboard-desktop-logo"></a>
+            <div class="profile">
+                <p class="profile-user">Jasleen</p>
+                <img src="../images/arrow-down.svg" alt="" class="profile-dropdown">
+                <ul class="profile-open">
+                    <button class="global__menu__close-btn global__menu__close-btn-profile"><img src="../images/close-btn.svg" alt=""></button>
+                    <li><img src="../images/settings.svg" alt=""><a href="../pages/settings.html">Settings</a></li>
+                    <li><img src="../images/logout.svg" alt=""><a href="">Logout</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <h1 class="dashboard__heading">Dashboard </h1>
-    <main id="main-page">
-    
-        <div class="container">
-            <div class="container__header">
-            <h1>Quotes to cheer you up!</h1>
-            </div>
-            <div class="container__body">
-                <p class="quote">“Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live”</p>
-                <p class="author">John Woods</p>
-                <button class="change-quote">Next Please!</button>
-            </div>
-        </div>
+        <main class="dashboard-main">
+     
+                <ul class="side-bar">
+                    <li><img src="../images/global-menu.svg" alt=""><a href="../pages/dashboard.html">Dashboard</a></li>
+                    <li><img src="../images/todo.svg" alt=""><a href="../pages/to-do.html">Todo List</a></li>
+                    <li><img src="../images/notes.svg" alt=""><a href="../pages/sticky-notes.html">Sticky Notes</a></li>
+                    <li><img src="../images/pomodoro.svg" alt=""><a href="../pages/pomodoro.html">Pomodoro</a></li>
+                    <li><img src="../images/timer.svg" alt=""><a href="../pages/time-tracker.html">Timer</a></li>
+                    <li><img src="../images/gift.svg" alt=""><a href="../pages/additional.html">Additional</a></li>
+                </ul>
 
-        <div class="container">
-            <div class="container__header">
-            <h1>Reminder Buddy</h1>
-            </div>
-            <div class="container__body">
-                <p class="reminder">Finish your tasks before deadline!</p>
-                <button class="change-quote"><a href="to-do.html">To-Do List</a></button>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="container__header">
-            <h1>Wanna Take Notes?</h1>
-            </div>
-            <div class="container__body">
-                <p class="reminder">Go review your notes or create new!</p>
-                <button class="change-quote"><a href="sticky-notes.html">Sticky Notes</a></button>
-            </div>
-        </div>
-        
-
-        <div class="container">
-            <div class="container__header">
-            <h1>Finally, wanna keep a track of your time?</h1>
-            </div>
-            <div class="container__body">
-                <p class="reminder">Here are some tools that'd help you stay focused!</p>
-                
-                <button class="change-quote"><a href="time-tracker.html">Time Tracker</a></button>
-                <button class="change-quote"><a href="pomodoro.html">Pomodoro</a></button>
-            </div>
-            </div>
-
-            <div class="container">
-                <div class="container__header">
-                <h1>A few more tools that'd be useful!</h1>
-                </div>
-                <div class="container__body">
-                    <p class="reminder">Check out these cool tools!</p>
+                <div class="main-content">
                     
-                    <button class="change-quote"><a href="tip-calculator.html">Tip Calculator</a></button>
-                    <button class="change-quote"><a href="age-calculator.html">Age Calculator</a></button>
                 </div>
-                </div>
-          
-        </div>
+       
+        </main>
+  
+   
+    
 
-
-    </main>
-</div>
     <script type="module" src="../js/dashboard.js"></script>
     <!-- <script src="js/router.js"></script> -->
 
