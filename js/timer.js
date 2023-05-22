@@ -1,31 +1,3 @@
-// import { supabase } from "../lib/client.js";
-
-
-/* Global Menu */
-
-
-
-const globalMenu = document.querySelector(".nav__right__global-menu--open");
-const globalMenuCloseBtn = document.querySelector(".global__menu__close-btn");
-const globalMenuOpenBtn = document.querySelector(".nav__right__global-menu-btn");
-
-
-function closeGlobalMenu() {
-    globalMenu.style.display = "none";
-    console.log("global menu closed");
-}
-
-function openGlobalMenu() {
-    globalMenu.style.display = "flex";
-    console.log("global menu opened");
-}
-
-
-
-
-globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
-globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
-
 
 const startStopBtn = document.querySelector('#startStopBtn');
 const resetBtn = document.querySelector('#resetBtn');
@@ -85,12 +57,12 @@ startStopBtn.addEventListener("click",
     function () {
         if (timerStatus === "stopped") {
             timeInterval = window.setInterval(stopWatch, 1000);
-            document.getElementById('startStopBtn').innerHTML = `<i class="fa fa-pause id="pause" style=" background-color:#0D121F;"></i>`;
+            document.getElementById('startStopBtn').innerHTML = `Pause`;
             timerStatus = "started";
         }
         else {
             window.clearInterval(timeInterval);
-            document.getElementById('startStopBtn').innerHTML = `<i class="fa fa-play id="play" style=" background-color: #7C5CFC;"></i>`;
+            document.getElementById('startStopBtn').innerHTML = `Play`;
             timerStatus = "stopped";
         }
 
@@ -104,7 +76,7 @@ resetBtn.addEventListener("click", function () {
 
     document.getElementById('timer').innerText = "00:00:00";
     if (timerStatus == "started") {
-        document.getElementById('startStopBtn').innerHTML = `<i class="fa fa-play id="play" style=" background-color: green;"></i>`;
+        document.getElementById('startStopBtn').innerHTML = `Play`;
         timerStatus = "stopped";
 
     }
