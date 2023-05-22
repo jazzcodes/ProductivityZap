@@ -812,7 +812,7 @@
 
   }
 
-  /* Header */
+  // /* Header */
   header {
     /* margin:2rem; */
     min-width: 100vw;
@@ -925,30 +925,267 @@
 
     }
   
-  /* Main */
+  // /* Main */
   main {
     /* margin:2rem; */
     padding: 2rem;
     /* height: 90vh;  */
   }
   
-  #main-page {
-    /* border: 2px solid red;  */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-  }
+  // #main-page {
+  //   /* border: 2px solid red;  */
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   gap: 3rem;
+  // }
   
 
 
- .dashboard__heading{
-  color: $secondary-700 ;
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
- }
+//  .dashboard__heading{
+//   color: $secondary-700 ;
+//   font-size: 2rem;
+//   font-weight: 700;
+//   text-align: center;
+//  }
+
+// dashboard
+
+.dashboard-header{
+
+width: 100vw;
+padding: 2rem;
+background-color: $secondary-700;
+
+.dashboard-mobile-nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dashboard-logo{
+    width: 100px;
+    border-radius: 0.5rem;
+  }
+
+  .dashboard-desktop-logo{
+    display:none;
+  }
+
+  .dashboard-mobile-menu-icon{
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .dashboard-open-mobile-menu{
+    display: none;
+ 
+
+
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+      padding: 2rem;
+      list-style: none;
+      align-items: flex-start;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: $secondary-700;
+      height: 100vh;
+    }
+
+      button{
+        background-color: $secondary-700;
+      }
+
+    li{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    
+      a{
+        
+      color: $secondary-300;
+      font-size: 1.5rem;
+      font-weight: 600;
+      }
+
+      img{
+        width: 30px;
+      }
+    }
+          
+  }
+  }
+
+  .profile{
+    display: flex;
+    gap: 1rem;
+    .profile-dropdown{
+      width: 25px;
+      cursor: pointer;
+    }
+
+    .profile-user{
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $secondary-300;
+
+   
+    }
+    ul{
+      display: none;
+      // display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 1.5rem;
+      list-style: none;
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      background-color: $secondary-700;
+
+      button{
+        background-color: $secondary-700;
+      }
+
+      li{
+        display: flex;
+        gap: 1rem;
+  
+        a{
+          color: $secondary-300;
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+  
+        img{
+          width: 30px;
+        }
+      }
+    }
+
+
+  }
+
+
+}
+
+@media screen and (min-width: 720px)
+{
+  .dashboard-header{
+  
+    .dashboard-mobile-nav{
+      padding: 0;
+      .dashboard-desktop-logo{
+        display:initial;
+      }
+      .dashboard-mobile-menu-icon{
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+.dashboard-main{
+  background-color: $bg-color;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  
+
+  .side-bar{
+    display: none;
+    
+      // display: flex;
+      // flex-direction: column;
+      // gap: 4rem;
+      // padding: 3rem;
+      // list-style: none;
+      // align-items: flex-start;
+      // list-style: none;
+      // width: 20%;
+      // height: 100vh;
+      // background-color: $secondary-700;
+
+
+      // li{
+      //   display: flex;
+      //   gap: 2rem;
+  
+      //   a{
+      //     color: $secondary-300;
+      //     font-weight: 600;
+      //     font-size: 1.5rem;
+      //   }
+  
+      //   img{
+      //     width: 30px;
+      //   }
+      // }
+    }
+
+
+}
+
+@media screen and (min-width:720px)
+{
+  .dashboard-main{
+    background-color: $bg-color;
+    padding: 0;
+    
+  
+    .side-bar{
+
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        padding: 3rem;
+        list-style: none;
+        align-items: flex-start;
+        list-style: none;
+        width: 20%;
+        height: 100vh;
+        background-color: $secondary-700;
+        margin-top: 0;
+  
+  
+        li{
+          display: flex;
+          gap: 2rem;
+    
+          a{
+            color: $secondary-300;
+            font-weight: 600;
+            font-size: 1.5rem;
+          }
+    
+          img{
+            width: 30px;
+          }
+        }
+      }
+  
+  
+  }
+  
+}
+
+
+
+
+
+
+
+
 
  //quotes
 
