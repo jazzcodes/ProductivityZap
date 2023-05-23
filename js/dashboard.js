@@ -1,21 +1,4 @@
-// /* Global Menu */
-
-// const globalMenu = document.querySelector(".nav__right__global-menu--open");
-// const globalMenuCloseBtn = document.querySelector(".global__menu__close-btn");
-// const globalMenuOpenBtn = document.querySelector(".nav__right__global-menu-btn");
-
-// function closeGlobalMenu() {
-//     globalMenu.style.display = "none";
-//     console.log("global menu closed");
-// }
-
-// function openGlobalMenu() {
-//     globalMenu.style.display = "flex";
-//     console.log("global menu opened");
-// }
-
-// globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
-// globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
+import { supabase } from '../lib/client.js';
 
 // // Quotes
 
@@ -100,3 +83,26 @@ function openProfileMenu() {
 
 globalMenuCloseBtnProfile.addEventListener('click', closeProfileMenu);
 mobileMenuOpenBtnProfile.addEventListener('click', openProfileMenu);
+
+const logout = document.querySelector('.logout');
+
+logout.addEventListener('click', async (e) => {
+  e.preventDefault();
+
+  let { error: error } = await supabase.auth.signOut();
+  if (error) {
+    alert(error.message);
+  } else {
+    window.open('../pages/login.html', '_self');
+  }
+});
+
+async function loadUser() {
+  const { data } = await supabase.auth.getUser();
+  // console.log(data);
+  // console.log(data['user']['email']);
+  const username = document.querySelector('.profile-user');
+  username.innerText = data['user']['email'];
+}
+
+loadUser();

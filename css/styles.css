@@ -658,7 +658,7 @@ main {
         align-items: flex-start;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 115px;
         background-color: #0d121f;
         height: 100vh;
         z-index: 1; }
@@ -1222,3 +1222,67 @@ button {
       top: -35px; }
     .age-main-container .arrow-icon {
       width: 70%; } }
+
+.sign-up-main,
+.login-main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .sign-up-main .sign-up-container,
+  .sign-up-main .login-container,
+  .login-main .sign-up-container,
+  .login-main .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem; }
+    .sign-up-main .sign-up-container label,
+    .sign-up-main .login-container label,
+    .login-main .sign-up-container label,
+    .login-main .login-container label {
+      color: #90a3bf;
+      font-size: 1.5rem;
+      font-weight: 600; }
+    .sign-up-main .sign-up-container input,
+    .sign-up-main .login-container input,
+    .login-main .sign-up-container input,
+    .login-main .login-container input {
+      border: 2px solid #596780;
+      min-width: 300px;
+      margin-top: -1rem;
+      padding: 0.5rem;
+      background-color: #0d121f;
+      color: #90a3bf;
+      font-size: 1.5rem;
+      font-weight: 600;
+      outline: 0; }
+    .sign-up-main .sign-up-container button,
+    .sign-up-main .login-container button,
+    .login-main .sign-up-container button,
+    .login-main .login-container button {
+      margin: 0; }
+    .sign-up-main .sign-up-container .question-sign-up,
+    .sign-up-main .sign-up-container .question-login,
+    .sign-up-main .login-container .question-sign-up,
+    .sign-up-main .login-container .question-login,
+    .login-main .sign-up-container .question-sign-up,
+    .login-main .sign-up-container .question-login,
+    .login-main .login-container .question-sign-up,
+    .login-main .login-container .question-login {
+      font-size: 1.5rem;
+      color: #596780;
+      font-weight: 600; }
+      .sign-up-main .sign-up-container .question-sign-up a,
+      .sign-up-main .sign-up-container .question-login a,
+      .sign-up-main .login-container .question-sign-up a,
+      .sign-up-main .login-container .question-login a,
+      .login-main .sign-up-container .question-sign-up a,
+      .login-main .sign-up-container .question-login a,
+      .login-main .login-container .question-sign-up a,
+      .login-main .login-container .question-login a {
+        color: #b49dfe; }
+
+.sign-up-login-logo {
+  width: 100px; }
