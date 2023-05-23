@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <main class="sign-up-main">
+      <div class="sign-up-container">
+        <a href="../index.html"
+          ><img
+            src="../images/logo.png"
+            alt=""
+            class="dashboard-logo dashboard-desktop-logo sign-up-login-logo"
+        /></a>
+        <h1 class="sign-up-heading"></h1>
+        <!-- <label for="sign-up-name">Name</label>
+        <input type="text" name="sign-up-name" class="sign-up-name" /> -->
+        <label for="sign-up-email">Email</label>
+        <input type="email" name="sign-up-email" class="sign-up-email" />
+        <label for="sign-up-email">Password</label>
+        <input
+          type="password"
+          name="sign-up-password"
+          class="sign-up-password"
+        />
+        <button class="sign-up-btn">Sign Up</button>
+        <p class="question-sign-up">
+          Already have an account? <a href="login.html">Login</a>
+        </p>
+      </div>
+    </main>
+    <script type="module" src="../js/sign-up.js"></script>
+    <script type="module" src="../lib/client.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+  </body>
+</html>
