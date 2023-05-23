@@ -1,99 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-  <link rel="stylesheet" href="css/styles.css">
-  <title>ProductivityZap</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ProductivityZap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="index-nav">
+        <a href="pages/dashboard.html"
+          ><img src="images/logo.png" alt="" class="prozap-logo"
+        /></a>
+        <img src="images/mobile-menu.svg" alt="" class="mobile-menu" />
+        <ul class="desktop-menu">
+          <li><a href="#about-us">About </a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <!-- <li><a href="#hiw">How it Works?</a></li> -->
+          <li><a href="#contact-us">Contact </a></li>
+          <li><img src="images/sun.svg" alt="" id="toggle" class="sun" /></li>
+        </ul>
+        <ul class="open-nav-mobile">
+          <button class="global__menu__close-btn">
+            <img src="../images/close-btn.svg" alt="" />
+          </button>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <!-- <li><a href="#hiw">How it Works?</a></li> -->
+          <li><a href="#contact-us">Contact Us</a></li>
+          <li id="toggle"><img src="images/sun.svg" alt="" class="sun" /></li>
+        </ul>
+        <button class="login">login</button>
+      </nav>
+    </header>
 
+    <main id="index-container">
+      <div class="index-hero" id="#about-us">
+        <h1 class="hero__heading">All your productivity tools in one place.</h1>
+        <p class="hero__content">
+          Your one-stop productivity enhancement platform. Manage all your stuff
+          with our supafast webapp.
+        </p>
+        <button class="sign-up">sign up</button>
 
-</head>
-<body>
-
-  <header>
-    <nav class="index-nav">
-     <a href="pages/dashboard.html"><img src="images/logo.png" alt="" class="prozap-logo"></a> 
-      <img src="images/mobile-menu.svg" alt="" class="mobile-menu">
-      <ul class="desktop-menu">
-        <li><a href="#about-us">About </a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#benefits">Benefits</a></li>
-        <!-- <li><a href="#hiw">How it Works?</a></li> -->
-        <li><a href="#contact-us">Contact </a></li>
-        <li><img src="images/sun.svg" alt="" id="toggle" class="sun"></li>
-      </ul>
-      <ul class="open-nav-mobile">
-        <button class="global__menu__close-btn"><img src="../images/close-btn.svg" alt=""></button>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#benefits">Benefits</a></li>
-        <!-- <li><a href="#hiw">How it Works?</a></li> -->
-        <li><a href="#contact-us">Contact Us</a></li>
-        <li id="toggle"><img src="images/sun.svg" alt=""  class="sun"></li>
-      </ul>
-      <button class="login">login</button>
-    </nav>
-  </header>
-
-  <main id="index-container">
-
-    <div class="index-hero" id="#about-us">
-      <h1 class="hero__heading" >All your productivity tools in one place.</h1>
-      <p class="hero__content">Your one-stop productivity enhancement platform. Manage all your stuff with our supafast webapp.</p>
-      <button class="sign-up">sign up</button>
-
-      <div class="hero__image">Dashboard SS here</div>
-    </div>
-   
-    <div class="index-products" id="products">
-      <h2 class="product-main-heading">Products</h2>
-      <ul class="product-list">
-        <li><img src="images/todo.svg" alt=""> <div class="list-content"><p class="list-heading">To-do List</p><p class="list-matter">A list of tasks in which you can add, delete & strike off tasks.</p></div> </li>
-        <li><img src="images/notes.svg" alt=""> <div class="list-content"><p class="list-heading">Sticky Notes</p><p class="list-matter">Take notes, edit & delete at a click of your mouse.</p></div> </li>
-        <li><img src="images/pomodoro.svg" alt=""> <div class="list-content"><p class="list-heading">Pomodoro</p><p class="list-matter"> Switch on your pomodoro to stay focused & don't forget to take a break.</p></div> </li>
-        <li><img src="images/timer.svg" alt=""> <div class="list-content"><p class="list-heading">Timer</p><p class="list-matter">Use timer to track your time while you do various tasks.</p></div> </li>
-        <li><img src="images/gift.svg" alt=""> <div class="list-content"><p class="list-heading">Extra Perks</p><p class="list-matter">Get other useful functionalities on signing up.</p></div> </li>
-      </ul>
-    </div>
-
-    <div class="index-benefits" id="benefits">
-      <h2 class="benefits-main-heading">Benefits</h2>
-      <p class="benefits-content">Time flies so fast, to get more productive you need to learn how to manage your time efficiently.
-      Our tools have got you covered! Checklists guarantee that the things we set out to complete during the day will be finished successfully. Efficiency and quickness aid in time management, and task management enables teams to work effectively. Next, you can use the sticky note as a reminder with a description of which place has what stuff. It can save you time. A quick fix in the morning to start your day right. Lastly, pomodoro & timer techniques help manage distractions and control your time. These empowers you to take control of your own time, thus, increasing accountability.
-      </p>
-      <div class="benefits-imgs">
-        <img src="images/graph.svg" alt="">
-        <img src="images/planning.svg" alt="">
-        <img src="images/target.svg" alt="">
+        <div class="hero__image">Dashboard SS here</div>
       </div>
-    </div>
 
-  </main>
+      <div class="index-products" id="products">
+        <h2 class="product-main-heading">Products</h2>
+        <ul class="product-list">
+          <li>
+            <img src="images/todo.svg" alt="" />
+            <div class="list-content">
+              <p class="list-heading">To-do List</p>
+              <p class="list-matter">
+                A list of tasks in which you can add, delete & strike off tasks.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/notes.svg" alt="" />
+            <div class="list-content">
+              <p class="list-heading">Sticky Notes</p>
+              <p class="list-matter">
+                Take notes, edit & delete at a click of your mouse.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/pomodoro.svg" alt="" />
+            <div class="list-content">
+              <p class="list-heading">Pomodoro</p>
+              <p class="list-matter">
+                Switch on your pomodoro to stay focused & don't forget to take a
+                break.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/timer.svg" alt="" />
+            <div class="list-content">
+              <p class="list-heading">Timer</p>
+              <p class="list-matter">
+                Use timer to track your time while you do various tasks.
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/gift.svg" alt="" />
+            <div class="list-content">
+              <p class="list-heading">Extra Perks</p>
+              <p class="list-matter">
+                Get other useful functionalities on signing up.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-  <footer class="index-footer" id="contact-us">
+      <div class="index-benefits" id="benefits">
+        <h2 class="benefits-main-heading">Benefits</h2>
+        <p class="benefits-content">
+          Time flies so fast, to get more productive you need to learn how to
+          manage your time efficiently. Our tools have got you covered!
+          Checklists guarantee that the things we set out to complete during the
+          day will be finished successfully. Efficiency and quickness aid in
+          time management, and task management enables teams to work
+          effectively. Next, you can use the sticky note as a reminder with a
+          description of which place has what stuff. It can save you time. A
+          quick fix in the morning to start your day right. Lastly, pomodoro &
+          timer techniques help manage distractions and control your time. These
+          empowers you to take control of your own time, thus, increasing
+          accountability.
+        </p>
+        <div class="benefits-imgs">
+          <img src="images/graph.svg" alt="" />
+          <img src="images/planning.svg" alt="" />
+          <img src="images/target.svg" alt="" />
+        </div>
+      </div>
+    </main>
 
-    <div class="footer-initial">
- <div class="initial">
-  <img src="images/logo.png" alt="">
-  <p class="email">prozap@gmail.com</p>
+    <footer class="index-footer" id="contact-us">
+      <div class="footer-initial">
+        <div class="initial">
+          <img src="images/logo.png" alt="" />
+          <p class="email">prozap@gmail.com</p>
 
-  <p>&copy; ProZap 2023 </p>
- </div>
+          <p>&copy; ProZap 2023</p>
+        </div>
 
-      <div class="socials">    <a href="" class="linkedin">LinkedIn</a>
-        <a href="" class="instagram">Instagram</a>
-        <a href="" class="twitter">Twitter</a></div>
-    </div>
-
-
-  </footer>
-<script type="module" src="js/index.js"></script>
-<!-- <script src="js/router.js"></script> -->
-</body>
+        <div class="socials">
+          <a href="" class="linkedin">LinkedIn</a>
+          <a href="" class="instagram">Instagram</a>
+          <a href="" class="twitter">Twitter</a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="js/index.js"></script>
+    <!-- <script src="js/router.js"></script> -->
+  </body>
 </html>

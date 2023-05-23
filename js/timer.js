@@ -1,7 +1,5 @@
-
 const startStopBtn = document.querySelector('#startStopBtn');
 const resetBtn = document.querySelector('#resetBtn');
-
 
 let seconds = 0;
 let minutes = 0;
@@ -12,7 +10,7 @@ let leadingMinutes = 0;
 let leadingHours = 0;
 
 let timeInterval = null;
-let timerStatus = "stopped";
+let timerStatus = 'stopped';
 
 function stopWatch() {
     seconds++;
@@ -26,58 +24,51 @@ function stopWatch() {
     }
 
     if (seconds < 10) {
-        leadingSeconds = "0" + seconds.toString();
-    }
-    else {
+        leadingSeconds = '0' + seconds.toString();
+    } else {
         leadingSeconds = seconds;
     }
 
     if (minutes < 10) {
-        leadingMinutes = "0" + minutes.toString();
-    }
-    else {
+        leadingMinutes = '0' + minutes.toString();
+    } else {
         leadingMinutes = minutes;
     }
 
     if (hours < 10) {
-        leadingHours = "0" + hours.toString();
-    }
-    else {
+        leadingHours = '0' + hours.toString();
+    } else {
         leadingHours = hours;
     }
 
-    document.getElementById('timer').innerText = `${leadingHours}:${leadingMinutes}:${leadingSeconds}`;
+    document.getElementById(
+        'timer'
+    ).innerText = `${leadingHours}:${leadingMinutes}:${leadingSeconds}`;
 }
 
+// window.setInterval(stopWatch, 1000); // time in milli seconds
 
-// window.setInterval(stopWatch, 1000); // time in milli seconds 
+startStopBtn.addEventListener('click', function () {
+    if (timerStatus === 'stopped') {
+        timeInterval = window.setInterval(stopWatch, 1000);
+        document.getElementById('startStopBtn').innerHTML = `Pause`;
+        timerStatus = 'started';
+    } else {
+        window.clearInterval(timeInterval);
+        document.getElementById('startStopBtn').innerHTML = `Play`;
+        timerStatus = 'stopped';
+    }
+});
 
-
-startStopBtn.addEventListener("click",
-    function () {
-        if (timerStatus === "stopped") {
-            timeInterval = window.setInterval(stopWatch, 1000);
-            document.getElementById('startStopBtn').innerHTML = `Pause`;
-            timerStatus = "started";
-        }
-        else {
-            window.clearInterval(timeInterval);
-            document.getElementById('startStopBtn').innerHTML = `Play`;
-            timerStatus = "stopped";
-        }
-
-    })
-
-resetBtn.addEventListener("click", function () {
+resetBtn.addEventListener('click', function () {
     window.clearInterval(timeInterval);
     seconds = 0;
     minutes = 0;
     hours = 0;
 
-    document.getElementById('timer').innerText = "00:00:00";
-    if (timerStatus == "started") {
+    document.getElementById('timer').innerText = '00:00:00';
+    if (timerStatus == 'started') {
         document.getElementById('startStopBtn').innerHTML = `Play`;
-        timerStatus = "stopped";
-
+        timerStatus = 'stopped';
     }
-})
+});

@@ -1,87 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="../css/normalize.scss"> -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <!-- <link rel="stylesheet" href="../styles.scss"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<!-- <link rel="stylesheet" href="../css/todo.scss">     -->
-<title>To-do List</title>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="../css/todo.scss">     -->
+    <title>To-do List</title>
+  </head>
+  <body>
     <header class="dashboard-header">
-        <nav class="dashboard-mobile-nav">
-            <img src="../images/mobile-menu.svg" alt="" class="dashboard-mobile-menu-icon">
+      <nav class="dashboard-mobile-nav">
+        <img
+          src="../images/mobile-menu.svg"
+          alt=""
+          class="dashboard-mobile-menu-icon"
+        />
 
-            <div class="dashboard-open-mobile-menu">
-                <ul>
-                    <button class="global__menu__close-btn"><img src="../images/close-btn.svg" alt=""></button>
-                    <a href="../index.html"><img src="../images/logo.png" alt="" class="dashboard-logo"></a>
-                    <li><img src="../images/global-menu.svg" alt=""><a href="../pages/dashboard.html">Dashboard</a></li>
-                    <li><img src="../images/todo.svg" alt=""><a href="../pages/to-do.html">Todo List</a></li>
-                    <li><img src="../images/notes.svg" alt=""><a href="../pages/sticky-notes.html">Sticky Notes</a></li>
-                    <li><img src="../images/pomodoro.svg" alt=""><a href="../pages/pomodoro.html">Pomodoro</a></li>
-                    <li><img src="../images/timer.svg" alt=""><a href="../pages/time-tracker.html">Timer</a></li>
-                    <li><img src="../images/gift.svg" alt=""><a href="../pages/additional.html">Additional</a></li>
-                </ul>
-            </div>
-            <a href="../index.html"><img src="../images/logo.png" alt="" class="dashboard-logo dashboard-desktop-logo"></a>
-            <div class="profile">
-                <p class="profile-user">Jasleen</p>
-                <img src="../images/arrow-down.svg" alt="" class="profile-dropdown">
-                <ul class="profile-open">
-                    <button class="global__menu__close-btn global__menu__close-btn-profile"><img src="../images/close-btn.svg" alt=""></button>
-                    <li><img src="../images/settings.svg" alt=""><a href="../pages/settings.html">Settings</a></li>
-                    <li><img src="../images/logout.svg" alt=""><a href="">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="dashboard-open-mobile-menu">
+          <ul>
+            <button class="global__menu__close-btn">
+              <img src="../images/close-btn.svg" alt="" />
+            </button>
+            <a href="../index.html"
+              ><img src="../images/logo.png" alt="" class="dashboard-logo"
+            /></a>
+            <li>
+              <img src="../images/global-menu.svg" alt="" /><a
+                href="../pages/dashboard.html"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <img src="../images/todo.svg" alt="" /><a
+                href="../pages/to-do.html"
+                >Todo List</a
+              >
+            </li>
+            <li>
+              <img src="../images/notes.svg" alt="" /><a
+                href="../pages/sticky-notes.html"
+                >Sticky Notes</a
+              >
+            </li>
+            <li>
+              <img src="../images/pomodoro.svg" alt="" /><a
+                href="../pages/pomodoro.html"
+                >Pomodoro</a
+              >
+            </li>
+            <li>
+              <img src="../images/timer.svg" alt="" /><a
+                href="../pages/time-tracker.html"
+                >Timer</a
+              >
+            </li>
+            <li>
+              <img src="../images/gift.svg" alt="" /><a
+                href="../pages/additional.html"
+                >Additional</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a href="../index.html"
+          ><img
+            src="../images/logo.png"
+            alt=""
+            class="dashboard-logo dashboard-desktop-logo"
+        /></a>
+        <div class="profile">
+          <p class="profile-user">Jasleen</p>
+          <img src="../images/arrow-down.svg" alt="" class="profile-dropdown" />
+          <ul class="profile-open">
+            <button
+              class="global__menu__close-btn global__menu__close-btn-profile"
+            >
+              <img src="../images/close-btn.svg" alt="" />
+            </button>
+            <li>
+              <img src="../images/settings.svg" alt="" /><a
+                href="../pages/settings.html"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <img src="../images/logout.svg" alt="" /><a href="">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
-        <main class="dashboard-main">
-     
-                <ul class="side-bar">
-                    <li><img src="../images/global-menu.svg" alt=""><a href="../pages/dashboard.html">Dashboard</a></li>
-                    <li><img src="../images/todo.svg" alt=""><a href="../pages/to-do.html">Todo List</a></li>
-                    <li><img src="../images/notes.svg" alt=""><a href="../pages/sticky-notes.html">Sticky Notes</a></li>
-                    <li><img src="../images/pomodoro.svg" alt=""><a href="../pages/pomodoro.html">Pomodoro</a></li>
-                    <li><img src="../images/timer.svg" alt=""><a href="../pages/time-tracker.html">Timer</a></li>
-                    <li><img src="../images/gift.svg" alt=""><a href="../pages/additional.html">Additional</a></li>
-                </ul>
+    <main class="dashboard-main">
+      <ul class="side-bar">
+        <li>
+          <img src="../images/global-menu.svg" alt="" /><a
+            href="../pages/dashboard.html"
+            >Dashboard</a
+          >
+        </li>
+        <li>
+          <img src="../images/todo.svg" alt="" /><a href="../pages/to-do.html"
+            >Todo List</a
+          >
+        </li>
+        <li>
+          <img src="../images/notes.svg" alt="" /><a
+            href="../pages/sticky-notes.html"
+            >Sticky Notes</a
+          >
+        </li>
+        <li>
+          <img src="../images/pomodoro.svg" alt="" /><a
+            href="../pages/pomodoro.html"
+            >Pomodoro</a
+          >
+        </li>
+        <li>
+          <img src="../images/timer.svg" alt="" /><a
+            href="../pages/time-tracker.html"
+            >Timer</a
+          >
+        </li>
+        <li>
+          <img src="../images/gift.svg" alt="" /><a
+            href="../pages/additional.html"
+            >Additional</a
+          >
+        </li>
+      </ul>
 
-                <div class="main-content">
-                    <div id="to-do-container">
-                        <!-- <h1 class="todo__heading">To-do List </h1> -->
-                
-                        <div class="tasks-container">
-                        <input type="text" placeholder="Create a new todo .." id="add-task">
-                        <div class="tasks-added">
-                            <ul class="tasks">
-                                <!-- <li class="task"> <div class="task-check"><input type="checkbox" name="0" class="done" id="" > <p class="strikethrough"> dummy</p>  </div> <button class="delete-task"> <img src="../images/delete-btn.svg" alt="" class="del-icon"> </button> </li> -->
-                                <!-- <li class="task"> <div class="task-check"><input type="checkbox" name="2" class="done" id="" > <p class="strikethrough"> dummy</p>  </div> <button id="delete-task">Delete</button> </li> -->
-                
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-                
-                
-                </div>
-       
-        </main>
-  
-   
+      <div class="main-content">
+        <div id="to-do-container">
+          <!-- <h1 class="todo__heading">To-do List </h1> -->
+
+          <div class="tasks-container">
+            <input
+              type="text"
+              placeholder="Create a new todo .."
+              id="add-task"
+            />
+            <div class="tasks-added">
+              <ul class="tasks">
+                <!-- <li class="task"> <div class="task-check"><input type="checkbox" name="0" class="done" id="" > <p class="strikethrough"> dummy</p>  </div> <button class="delete-task"> <img src="../images/delete-btn.svg" alt="" class="del-icon"> </button> </li> -->
+                <!-- <li class="task"> <div class="task-check"><input type="checkbox" name="2" class="done" id="" > <p class="strikethrough"> dummy</p>  </div> <button id="delete-task">Delete</button> </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script type="module" src="../js/todo.js"></script>
     <script type="module" src="../js/dashboard.js"></script>
     <!-- <script src="js/router.js"></script> -->
     <script type="module" src="../lib/client.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-</body>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+  </body>
 </html>
-
