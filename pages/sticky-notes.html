@@ -1,94 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="../css/normalize.scss"> -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css" />
     <!-- <link rel="stylesheet" href="../css/sticky.scss"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Sticky Notes</title>
-</head>
-<body>
-    <div id="dashboard-root">
-    <header>
-        <nav>
-            <!-- <img src="" alt="" class="logo-btn"> -->
-            <p class="nav__logo">Logo</p>
-            <div class="nav__right">
-            <img src="../images/settings.svg" alt="" class="nav__right__settings-btn">
-            <div class="nav__right__global-menu">
-                <img src="../images/global-menu.svg" alt="" class="nav__right__global-menu-btn">
-            </div>
-            <div class="nav__right__global-menu--open">
-                <button class="global__menu__close-btn"><img src="../images/close-btn.svg" alt=""></button>
-                <p class="global__menu__service"><a href="to-do.html" onclick="route()">To-do List</a></p>
-                <p class="global__menu__service"><a href="pomodoro.html" onclick="route()">Pomodoro</a></p>
-                <p class="global__menu__service"><a href="time-tracker.html" onclick="route()">Time Tracker</a></p>
-                <p class="global__menu__service"><a href="dashboard.html" onclick="route()">Dashboard</a></p>
-            </div>
-            <div class="nav__right__user-profile">
-                <p class="nav__right__user-profile__user-name">Jasleen</p>
-                <img src="../images/arrow-down.svg" alt="" class="nav__right__user-profile__dropdown-btn">
-            </div>
-        </div>
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <nav class="dashboard-mobile-nav">
+        <img
+          src="../images/mobile-menu.svg"
+          alt=""
+          class="dashboard-mobile-menu-icon"
+        />
 
-        </nav>
+        <div class="dashboard-open-mobile-menu">
+          <ul>
+            <button class="global__menu__close-btn">
+              <img src="../images/close-btn.svg" alt="" />
+            </button>
+            <a href="../index.html"
+              ><img src="../images/logo.png" alt="" class="dashboard-logo"
+            /></a>
+            <li>
+              <img src="../images/global-menu.svg" alt="" /><a
+                href="../pages/dashboard.html"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <img src="../images/todo.svg" alt="" /><a
+                href="../pages/to-do.html"
+                >Todo List</a
+              >
+            </li>
+            <li>
+              <img src="../images/notes.svg" alt="" /><a
+                href="../pages/sticky-notes.html"
+                >Sticky Notes</a
+              >
+            </li>
+            <li>
+              <img src="../images/pomodoro.svg" alt="" /><a
+                href="../pages/pomodoro.html"
+                >Pomodoro</a
+              >
+            </li>
+            <li>
+              <img src="../images/timer.svg" alt="" /><a
+                href="../pages/time-tracker.html"
+                >Timer</a
+              >
+            </li>
+            <li>
+              <img src="../images/gift.svg" alt="" /><a
+                href="../pages/additional.html"
+                >Additional</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a href="../index.html"
+          ><img
+            src="../images/logo.png"
+            alt=""
+            class="dashboard-logo dashboard-desktop-logo"
+        /></a>
+        <div class="profile">
+          <p class="profile-user">Jasleen</p>
+          <img src="../images/arrow-down.svg" alt="" class="profile-dropdown" />
+          <ul class="profile-open">
+            <button
+              class="global__menu__close-btn global__menu__close-btn-profile"
+            >
+              <img src="../images/close-btn.svg" alt="" />
+            </button>
+            <li>
+              <img src="../images/settings.svg" alt="" /><a
+                href="../pages/settings.html"
+                >Settings</a
+              >
+            </li>
+            <li>
+              <img src="../images/logout.svg" alt="" /><a href="">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
-    <h1 class="sticky__heading">Sticky Notes</h1>
-   
-    <main id="sticky-notes-container">
-        <!-- <button id="add-note">Add Note</button> -->
-    
-        <div class="sticky__card">
-            <div class="sticky-initial">
-            <input type="text" class="card__heading" placeholder="Write note heading here..."></input>
-           
-            <textarea name="" class="note-area" id="" cols="30" rows="8" placeholder="Write note here..."></textarea>
+    <main class="dashboard-main">
+      <ul class="side-bar">
+        <li>
+          <img src="../images/global-menu.svg" alt="" /><a
+            href="../pages/dashboard.html"
+            >Dashboard</a
+          >
+        </li>
+        <li>
+          <img src="../images/todo.svg" alt="" /><a href="../pages/to-do.html"
+            >Todo List</a
+          >
+        </li>
+        <li>
+          <img src="../images/notes.svg" alt="" /><a
+            href="../pages/sticky-notes.html"
+            >Sticky Notes</a
+          >
+        </li>
+        <li>
+          <img src="../images/pomodoro.svg" alt="" /><a
+            href="../pages/pomodoro.html"
+            >Pomodoro</a
+          >
+        </li>
+        <li>
+          <img src="../images/timer.svg" alt="" /><a
+            href="../pages/time-tracker.html"
+            >Timer</a
+          >
+        </li>
+        <li>
+          <img src="../images/gift.svg" alt="" /><a
+            href="../pages/additional.html"
+            >Additional</a
+          >
+        </li>
+      </ul>
+
+      <div class="main-content">
+        <div id="dashboard-root">
+          <main id="sticky-notes-container">
+            <!-- <button id="add-note">Add Note</button> -->
+
+            <div class="sticky__card">
+              <div class="sticky-initial">
+                <input
+                  type="text"
+                  class="card__heading"
+                  placeholder="Write note heading here..."
+                />
+
+                <textarea
+                  name=""
+                  class="note-area"
+                  id=""
+                  cols="30"
+                  rows="8"
+                  placeholder="Write note here..."
+                ></textarea>
+              </div>
+              <div class="card__footer">
+                <button class="card-footer-add">Add</button
+                ><button class="card-footer-cancel">Cancel</button>
+              </div>
+            </div>
+          </main>
         </div>
-            <div class="card__footer"><button class="card-footer-add">Add</button><button class="card-footer-cancel">Cancel</button></div>
-        </div>
-        <!-- <div class="sticky__card">
-            <div class="sticky-initial">
-            <p class="card__heading" contenteditable="true">Write note heading here...</p>
-            <p class="note-area" contenteditable="true">Write note here...</p>
-        </div>
-            <div class="card__footer"><p class="note-date">May 16, 2023</p> <div class="note-btns"><button class="edit-note-btn">  <img src="../images/edit-icon.svg" alt="" class="edit-note-icon"></button> <button class="edit-note-btn">  <img src="../images/delete-btn.svg" alt="" class="delete-note-icon"></button></div> </div>
-        </div>
-        <div class="sticky__card">
-            <div class="sticky-initial">
-            <p class="card__heading" contenteditable="true">Write note heading here...</p>
-            <p class="note-area" contenteditable="true">Write note here...</p>
-        </div>
-            <div class="card__footer"><p class="note-date">May 16, 2023</p> <div class="note-btns"><button class="edit-note-btn">  <img src="../images/edit-icon.svg" alt="" class="edit-note-icon"></button> <button class="edit-note-btn">  <img src="../images/delete-btn.svg" alt="" class="delete-note-icon"></button></div> </div>
-        </div>
-        <div class="sticky__card">
-            <div class="sticky-initial">
-            <p class="card__heading" contenteditable="true">Write note heading here...</p>
-            <p class="note-area" contenteditable="true">Write note here...</p>
-        </div>
-            <div class="card__footer"><p class="note-date">May 16, 2023</p> <div class="note-btns"><button class="edit-note-btn">  <img src="../images/edit-icon.svg" alt="" class="edit-note-icon"></button> <button class="edit-note-btn">  <img src="../images/delete-btn.svg" alt="" class="delete-note-icon"></button></div> </div>
-        </div>
-        <div class="sticky__card">
-            <div class="sticky-initial">
-            <p class="card__heading" contenteditable="true">Write note heading here...</p>
-            <p class="note-area" contenteditable="true">Write note here...</p>
-        </div>
-            <div class="card__footer"><p class="note-date">May 16, 2023</p> <div class="note-btns"><button class="edit-note-btn">  <img src="../images/edit-icon.svg" alt="" class="edit-note-icon"></button> <button class="edit-note-btn">  <img src="../images/delete-btn.svg" alt="" class="delete-note-icon"></button></div> </div>
-        </div> -->
-    
+      </div>
     </main>
 
-
-</div>
     <script type="module" src="../js/sticky.js"></script>
     <!-- <script src="js/router.js"></script> -->
+    <script type="module" src="../js/dashboard.js"></script>
     <script type="module" src="../dist/bundle.js"></script>
     <script type="module" src="../lib/client.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-   
-</body>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+  </body>
 </html>
