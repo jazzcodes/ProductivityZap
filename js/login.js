@@ -53,6 +53,3 @@ function handleAuthStateChange(event, session) {
 }
 
 supabase.auth.onAuthStateChange(handleAuthStateChange);
-
-// this is needed whenever reloading the page
-// checkAuth();

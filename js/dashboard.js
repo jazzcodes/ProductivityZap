@@ -1,47 +1,5 @@
 import { supabase } from '../lib/client.js';
 
-// // Quotes
-
-// const quote = document.querySelector('.quote');
-// const author = document.querySelector('.author');
-// const button = document.querySelector('.change-quote');
-
-// const quotes = [
-//     {
-//         quote: "“The greatest glory in living lies not in never falling, but in rising every time we fall.”",
-//         author: "Nelson Mandela"
-//     },
-//     {
-//         quote: "“Truth can only be found in one place: the code.”",
-//         author: "Robert C. Martin"
-//     },
-//     {
-//         quote: "“Life is what happens when you're busy making other plans.”",
-//         author: "John Lennon"
-//     },
-//     {
-//         quote: "“If life were predictable it would cease to be life, and be without flavor.”",
-//         author: "Eleanor Roosevelt"
-//     },
-//     {
-//         quote: "“Whoever is happy will make others happy too.”",
-//         author: "Anne Frank"
-//     },
-//     {
-//         quote: "“Always remember that you are absolutely unique. Just like everyone else.”",
-//         author: "Margaret Mead"
-//     }
-// ]
-
-// button.addEventListener("click",
-//     () => {
-//         const random = Math.floor(Math.random() * quotes.length);
-//         quote.innerText = quotes[random].quote;
-//         author.innerText = quotes[random].author;
-//     }
-
-// )
-
 /* Mobile Menu */
 
 const mobileMenu = document.querySelector('.dashboard-open-mobile-menu');
@@ -84,6 +42,19 @@ function openProfileMenu() {
 globalMenuCloseBtnProfile.addEventListener('click', closeProfileMenu);
 mobileMenuOpenBtnProfile.addEventListener('click', openProfileMenu);
 
+async function loadUser() {
+  const { data } = await supabase.auth.getUser();
+  // console.log(data);
+  // console.log(data['user']['email']);
+  const username = document.querySelector('.profile-user');
+  username.innerText = data['user']['email'];
+  console.log(data);
+  localStorage.setItem('userId', data['user']['id']);
+  localStorage.setItem('loggedUser', JSON.stringify(data['user']['email']));
+}
+
+loadUser();
+
 const logout = document.querySelector('.logout');
 
 logout.addEventListener('click', async (e) => {
@@ -93,16 +64,8 @@ logout.addEventListener('click', async (e) => {
   if (error) {
     alert(error.message);
   } else {
+    localStorage.setItem('loggedUser', null);
+    localStorage.setItem('userId', null);
     window.open('../pages/login.html', '_self');
   }
 });
-
-async function loadUser() {
-  const { data } = await supabase.auth.getUser();
-  // console.log(data);
-  // console.log(data['user']['email']);
-  const username = document.querySelector('.profile-user');
-  username.innerText = data['user']['email'];
-}
-
-loadUser();

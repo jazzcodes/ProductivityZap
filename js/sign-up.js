@@ -17,6 +17,6 @@ signUpBtn.addEventListener('click', async function signUpUser(e) {
   if (error) {
     alert(error.message);
   } else {
-    alert('Confirmation link sent to your email!');
+    alert('Successfully signed up!');
   }
 });

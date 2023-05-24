@@ -6,9 +6,12 @@ const inputTask = document.getElementById('add-task');
 const tasksList = document.querySelector('.tasks');
 
 // fetch data from supabase & display
-
+let userId = localStorage.getItem('userId');
 async function loadData() {
-  const { data: todo, error } = await supabase.from('todo').select('*');
+  const { data: todo, error } = await supabase
+    .from('todo')
+    .select('*')
+    .eq('user_id', userId);
   // console.log(error);
   // console.log(todo);
 
@@ -19,7 +22,15 @@ async function loadData() {
     //display data
 
     tasksList.innerHTML += `
-        <li id=${task.id} class="task"> <div class="task-check"><input type="checkbox" class="done" name="${task.id}" id=""> <p class="strikethrough"> ${task.task} </p> </div><button class="delete-task" name=${task.id}><img src="../images/delete-btn.svg" alt="" class="del-icon"> </button></li>
+        <li id=${task.id} class="task"> 
+        <div class="task-check">
+        <input type="checkbox" class="done" name="${task.id}" id=""> 
+        <p class="strikethrough"> ${task.task} </p>
+         </div>
+         <button class="delete-task" name=${task.id}>
+         <img src="../images/delete-btn.svg" alt="" class="del-icon"> 
+         </button>
+         </li>
 
         `;
 
@@ -33,7 +44,8 @@ async function loadData() {
         const { data: delData, delError } = await supabase
           .from('todo')
           .delete()
-          .eq('id', del.name);
+          .eq('id', del.name)
+          .eq('user_id', userId);
 
         location.reload();
       });
@@ -51,7 +63,8 @@ async function loadData() {
       const { data: todoNew, errorNew } = await supabase
         .from('todo')
         .select('id')
-        .eq('done', 'true');
+        .eq('done', 'true')
+        .eq('user_id', userId);
       // console.log(errorNew);
       // console.log(todoNew);
 
@@ -84,7 +97,8 @@ async function loadData() {
           const { data: doneData, error: doneError } = await supabase
             .from('todo')
             .update({ done: done.checked })
-            .eq('id', taskID);
+            .eq('id', taskID)
+            .eq('user_id', userId);
         }
 
         handleDone();
@@ -110,6 +124,7 @@ inputTask.addEventListener('keypress', async function insertData(event) {
     const { data: todo, error } = await supabase.from('todo').insert([
       {
         task: taskEntered,
+        user_id: userId,
       },
     ]);
     location.reload();
