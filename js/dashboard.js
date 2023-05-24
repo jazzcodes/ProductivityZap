@@ -1,63 +1,4 @@
-// /* Global Menu */
-
-// const globalMenu = document.querySelector(".nav__right__global-menu--open");
-// const globalMenuCloseBtn = document.querySelector(".global__menu__close-btn");
-// const globalMenuOpenBtn = document.querySelector(".nav__right__global-menu-btn");
-
-// function closeGlobalMenu() {
-//     globalMenu.style.display = "none";
-//     console.log("global menu closed");
-// }
-
-// function openGlobalMenu() {
-//     globalMenu.style.display = "flex";
-//     console.log("global menu opened");
-// }
-
-// globalMenuCloseBtn.addEventListener("click", closeGlobalMenu);
-// globalMenuOpenBtn.addEventListener("click", openGlobalMenu);
-
-// // Quotes
-
-// const quote = document.querySelector('.quote');
-// const author = document.querySelector('.author');
-// const button = document.querySelector('.change-quote');
-
-// const quotes = [
-//     {
-//         quote: "“The greatest glory in living lies not in never falling, but in rising every time we fall.”",
-//         author: "Nelson Mandela"
-//     },
-//     {
-//         quote: "“Truth can only be found in one place: the code.”",
-//         author: "Robert C. Martin"
-//     },
-//     {
-//         quote: "“Life is what happens when you're busy making other plans.”",
-//         author: "John Lennon"
-//     },
-//     {
-//         quote: "“If life were predictable it would cease to be life, and be without flavor.”",
-//         author: "Eleanor Roosevelt"
-//     },
-//     {
-//         quote: "“Whoever is happy will make others happy too.”",
-//         author: "Anne Frank"
-//     },
-//     {
-//         quote: "“Always remember that you are absolutely unique. Just like everyone else.”",
-//         author: "Margaret Mead"
-//     }
-// ]
-
-// button.addEventListener("click",
-//     () => {
-//         const random = Math.floor(Math.random() * quotes.length);
-//         quote.innerText = quotes[random].quote;
-//         author.innerText = quotes[random].author;
-//     }
-
-// )
+import { supabase } from '../lib/client.js';
 
 /* Mobile Menu */
 
@@ -100,3 +41,31 @@ function openProfileMenu() {
 
 globalMenuCloseBtnProfile.addEventListener('click', closeProfileMenu);
 mobileMenuOpenBtnProfile.addEventListener('click', openProfileMenu);
+
+async function loadUser() {
+  const { data } = await supabase.auth.getUser();
+  // console.log(data);
+  // console.log(data['user']['email']);
+  const username = document.querySelector('.profile-user');
+  username.innerText = data['user']['email'];
+  console.log(data);
+  localStorage.setItem('userId', data['user']['id']);
+  localStorage.setItem('loggedUser', JSON.stringify(data['user']['email']));
+}
+
+loadUser();
+
+const logout = document.querySelector('.logout');
+
+logout.addEventListener('click', async (e) => {
+  e.preventDefault();
+
+  let { error: error } = await supabase.auth.signOut();
+  if (error) {
+    alert(error.message);
+  } else {
+    localStorage.setItem('loggedUser', null);
+    localStorage.setItem('userId', null);
+    window.open('../pages/login.html', '_self');
+  }
+});

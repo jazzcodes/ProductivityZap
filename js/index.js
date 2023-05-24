@@ -33,3 +33,16 @@ function modeSwitch() {
   rootElement.classList.toggle('light-mode');
   // console.log('theme switched');
 }
+
+const loginBtn = document.querySelector('.login');
+const signUpBtn = document.querySelector('.sign-up');
+
+loginBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('../pages/login.html');
+});
+
+signUpBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.open('../pages/sign-up.html');
+});
