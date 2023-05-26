@@ -22,6 +22,13 @@ loginBtn.addEventListener('click', async function loginUser(e) {
   }
 });
 
+loginPassword.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    loginBtn.click();
+  }
+});
+
 // Check if user is logged in
 async function checkAuth() {
   const user = supabase.auth.user();

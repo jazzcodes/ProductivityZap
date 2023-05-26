@@ -20,3 +20,10 @@ signUpBtn.addEventListener('click', async function signUpUser(e) {
     alert('Successfully signed up!');
   }
 });
+
+signUpPassword.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    signUpBtn.click();
+  }
+});

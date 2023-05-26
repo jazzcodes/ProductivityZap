@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/styles.css" />
-    <title>ProductivityZap</title>
+    <title>ProZap</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,9 +17,7 @@
   <body>
     <header>
       <nav class="index-nav">
-        <a href="pages/dashboard.html"
-          ><img src="images/logo.png" alt="" class="prozap-logo"
-        /></a>
+        <img src="images/logo.png" alt="" class="prozap-logo" />
         <img src="images/mobile-menu.svg" alt="" class="mobile-menu" />
         <ul class="desktop-menu">
           <li><a href="#about-us">About </a></li>
@@ -28,6 +26,7 @@
 
           <li><a href="#contact-us">Contact </a></li>
           <li><img src="images/sun.svg" alt="" id="toggle" class="sun" /></li>
+          <li><img src="images/moon.svg" alt="" id="toggle" class="moon" /></li>
         </ul>
         <ul class="open-nav-mobile">
           <button class="global__menu__close-btn">
@@ -38,7 +37,8 @@
           <li><a href="#benefits">Benefits</a></li>
           <!-- <li><a href="#hiw">How it Works?</a></li> -->
           <li><a href="#contact-us">Contact Us</a></li>
-          <li id="toggle"><img src="images/sun.svg" alt="" class="sun" /></li>
+          <li><img src="images/sun.svg" alt="" class="sun toggle" /></li>
+          <li><img src="images/moon.svg" alt="" class="moon toggle" /></li>
         </ul>
         <button class="login">login</button>
       </nav>
@@ -69,7 +69,7 @@
             </div>
           </li>
           <li>
-            <img src="images/notes.svg" alt="" />
+            <img src="images/notes.svg" alt="" id="notes" />
             <div class="list-content">
               <p class="list-heading">Sticky Notes</p>
               <p class="list-matter">
@@ -88,7 +88,7 @@
             </div>
           </li>
           <li>
-            <img src="images/timer.svg" alt="" />
+            <img src="images/timer.svg" alt="" id="timer" />
             <div class="list-content">
               <p class="list-heading">Timer</p>
               <p class="list-matter">
@@ -97,7 +97,7 @@
             </div>
           </li>
           <li>
-            <img src="images/gift.svg" alt="" />
+            <img src="images/gift.svg" alt="" id="gift" />
             <div class="list-content">
               <p class="list-heading">Extra Perks</p>
               <p class="list-matter">
@@ -116,12 +116,11 @@
           Checklists guarantee that the things we set out to complete during the
           day will be finished successfully. Efficiency and quickness aid in
           time management, and task management enables teams to work
-          effectively. Next, you can use the sticky note as a reminder with a
-          description of which place has what stuff. It can save you time. A
-          quick fix in the morning to start your day right. Lastly, pomodoro &
-          timer techniques help manage distractions and control your time. These
-          empowers you to take control of your own time, thus, increasing
-          accountability.
+          effectively. Next, you can use the sticky notes as a reminder with a
+          description. It can save you time. A quick fix in the morning to start
+          your day right. Lastly, pomodoro & timer techniques help manage
+          distractions and control your time. These empowers you to take control
+          of your own time, thus, increasing accountability.
         </p>
         <div class="benefits-imgs">
           <img src="images/graph.svg" alt="" />
@@ -134,7 +133,7 @@
     <footer class="index-footer" id="contact-us">
       <div class="footer-initial">
         <div class="initial">
-          <img src="images/logo.png" alt="" />
+          <a href="#"><img src="images/logo.png" alt="" /></a>
           <p class="email">prozap@gmail.com</p>
 
           <p>&copy; ProZap 2023</p>

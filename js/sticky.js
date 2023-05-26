@@ -45,6 +45,8 @@ async function loadData() {
 
       document.querySelector(`[id="heading-${i}"]`).readOnly = false;
       document.querySelector(`[id="content-${i}"]`).readOnly = false;
+      document.querySelector(`[id="content-${i}"]`).focus();
+
       // console.log('readonly changed of', i);
       document
         .querySelector(`[id="heading-${i}"]`)
@@ -115,9 +117,10 @@ function newNote() {
   // loadData();
 }
 
-addNoteBtn.addEventListener('click', () => {
-  // e.preventDefault();
+addNoteBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   newNote();
+  location.reload();
   // console.log('Add clicked');
 });
 cancelNoteBtn.addEventListener('click', () => {

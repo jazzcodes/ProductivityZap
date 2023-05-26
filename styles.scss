@@ -360,16 +360,14 @@ template {
 
 $primary-0: #ffffff;
 $primary-100: #e7defe;
-$primary-200: #cebefe;
-$primary-300: #b49dfe;
+
 $primary-400: #9f84fd;
 $primary-500: #7c5cfc;
 $secondary-300: #90a3bf;
 $secondary-100: #e0e9f4;
-$secondary-200: #c3d4e9;
+
 $secondary-400: #596780;
-$secondary-700: #0d121f;
-$bg-color: #1a202c;
+
 $text-color: white;
 $gradient: linear-gradient(
   90deg,
@@ -386,6 +384,7 @@ html {
       align-items: center; */
   font-family: 'Plus Jakarta Sans', sans-serif;
   // background-color: #B49DFE;
+  overflow-x: hidden;
 }
 
 @mixin flexRow-alignItemsCenter-justifySpaceBW() {
@@ -400,15 +399,30 @@ html {
   align-items: center;
 }
 
-.light-mode {
-  $bg-color: white;
-  $text-color: $secondary-400;
+.theme-dark {
+  --bg-color: #1a202c;
+  --primary-text: white;
+  --primary-hover: #9f84fd;
+  --secondary-text: #c3d4e9;
+  --secondary-matter: #cebefe;
+  --products-list: #cebefe;
+  --second-bg: var(--second-bg);
+}
+
+.theme-light {
+  --bg-color: white;
+  --primary-text: #9f84fd;
+  --primary-hover: #b49dfe;
+  --secondary-text: #596780;
+  --secondary-matter: #7c5cfc;
+  --products-list: #596780;
+  --second-bg: #e0e9f4;
 }
 
 body {
   height: 100vh;
   @include flexColumn-alignItemsOnlyCenter();
-  background-color: $bg-color;
+  background-color: var(--bg-color);
 }
 
 #index-container {
@@ -434,6 +448,7 @@ body {
     h2 {
       color: $primary-500;
       font-size: 3rem;
+      text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
     }
 
     ul {
@@ -442,18 +457,19 @@ body {
 
       li {
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
         // justify-content: flex-start;
 
         .list-heading {
-          color: white;
+          color: var(--primary-text);
           font-size: 1.5rem;
-          font-weight: 500;
+          font-weight: bold;
         }
 
         .list-matter {
-          color: $primary-200;
+          color: var(--secondary-matter);
           font-size: 1.5rem;
+          font-weight: bold;
         }
       }
 
@@ -464,7 +480,7 @@ body {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   #index-container {
     .index-products {
       h2 {
@@ -478,13 +494,13 @@ body {
           // justify-content: flex-start;
 
           .list-heading {
-            color: white;
+            color: var(--primary-text);
             font-size: 1.5rem;
-            font-weight: 500;
+            font-weight: bold;
           }
 
           .list-matter {
-            color: $primary-200;
+            color: var(--products-list);
             font-size: 1.5rem;
           }
         }
@@ -512,39 +528,46 @@ body {
     display: none;
     flex-direction: column;
     align-items: baseline;
-    gap: 2rem;
+    gap: 5rem;
     list-style: none;
     padding: 3rem;
     position: absolute;
     top: -2rem;
     right: 0rem;
-    background-color: $bg-color;
+    background-color: var(--bg-color);
+    height: 100vh;
 
     .sun {
       width: 3rem;
+      cursor: pointer;
+    }
+    .moon {
+      width: 3rem;
+      cursor: pointer;
+      display: none;
     }
 
     .global__menu__close-btn {
       cursor: pointer;
       padding: 0;
       margin-bottom: 2rem;
-      background-color: $bg-color;
+      background-color: var(--bg-color);
     }
 
     a {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 700;
-      color: $secondary-300;
+      color: var(--primary-text);
 
       &:hover {
-        color: $primary-300;
+        color: var(--primary-hover);
       }
     }
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .mobile-menu {
     display: none;
   }
@@ -561,16 +584,23 @@ body {
     list-style: none;
     .sun {
       width: 3rem;
+      cursor: pointer;
+    }
+
+    .moon {
+      width: 3rem;
+      cursor: pointer;
+      display: none;
     }
 
     a {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 700;
-      color: $text-color;
+      color: var(--primary-text);
 
       &:hover {
-        color: $primary-400;
+        color: var(--primary-hover);
       }
     }
   }
@@ -585,7 +615,7 @@ body {
   }
 }
 
-@media screen and (max-width: 71.9rem) {
+@media screen and (max-width: 719px) {
   .desktop-menu {
     display: none;
   }
@@ -604,12 +634,14 @@ body {
   .benefits-main-heading {
     color: $primary-500;
     font-size: 3rem;
+    text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
   }
 
   .benefits-content {
-    color: $secondary-200;
+    color: var(--secondary-text);
     font-size: 1.5rem;
     line-height: 1.5;
+    font-weight: bold;
   }
 
   .benefits-imgs {
@@ -624,7 +656,7 @@ body {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .index-benefits {
     .benefits-main-heading {
       font-size: 5rem;
@@ -649,7 +681,7 @@ body {
 }
 
 .index-footer {
-  background-color: $secondary-700;
+  background-color: var(--second-bg);
   width: 100%;
   padding: 2rem;
   margin-top: 4rem;
@@ -672,7 +704,7 @@ body {
   .initial {
     display: flex;
     flex-direction: column;
-    color: $primary-200;
+    color: var(--secondary-matter);
   }
 
   .socials {
@@ -682,7 +714,11 @@ body {
 
     a {
       text-decoration: none;
-      color: $primary-200;
+      color: var(--secondary-matter);
+
+      &:hover {
+        color: var(--primary-text);
+      }
     }
   }
 }
@@ -719,21 +755,22 @@ a {
   align-items: center;
   .hero__heading {
     font-size: 3.6rem;
-    color: white;
+    color: var(--primary-text);
     font-weight: 700;
     line-height: 1.5;
   }
 
   .hero__content {
     font-size: 1.6rem;
-    color: $secondary-200;
+    color: var(--secondary-text);
     line-height: 1.5;
+    font-weight: bold;
   }
 
   .hero__image {
     min-width: 100%;
     min-height: 31rem;
-    background-color: $primary-200;
+    background-color: var(--secondary-matter);
     font-size: 2rem;
     margin-top: 2rem;
     display: flex;
@@ -742,7 +779,7 @@ a {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .index-hero {
     justify-content: center;
     align-items: center;
@@ -853,7 +890,7 @@ header {
       font-size: 1.5rem;
 
       &:hover {
-        color: $primary-200;
+        color: var(--secondary-matter);
       }
     }
   }
@@ -884,7 +921,7 @@ main {
 .dashboard-header {
   width: 100vw;
   padding: 2rem;
-  background-color: $secondary-700;
+  background-color: var(--second-bg);
 
   .dashboard-mobile-nav {
     width: 100%;
@@ -919,13 +956,13 @@ main {
         position: absolute;
         left: 0;
         top: 11.5rem;
-        background-color: $secondary-700;
+        background-color: var(--second-bg);
         height: 100vh;
         z-index: 1;
       }
 
       button {
-        background-color: $secondary-700;
+        background-color: var(--second-bg);
       }
 
       li {
@@ -934,9 +971,15 @@ main {
         align-items: center;
 
         a {
-          color: $secondary-300;
+          color: #b49dfe;
           font-size: 1.5rem;
           font-weight: 600;
+
+          &:hover,
+          &:focus {
+            color: $primary-500;
+            // text-shadow: 4px 4px 4px rgba(243, 239, 239, 0.6);
+          }
         }
 
         img {
@@ -957,7 +1000,7 @@ main {
     .profile-user {
       font-size: 1.5rem;
       font-weight: 600;
-      color: $secondary-300;
+      color: #b49dfe;
     }
     ul {
       display: none;
@@ -970,11 +1013,11 @@ main {
       position: absolute;
       top: 6rem;
       right: 0;
-      background-color: $secondary-700;
+      background-color: var(--second-bg);
       z-index: 1;
 
       button {
-        background-color: $secondary-700;
+        background-color: var(--second-bg);
       }
 
       li {
@@ -983,7 +1026,7 @@ main {
         gap: 1rem;
 
         a {
-          color: $secondary-300;
+          color: #b49dfe;
           font-weight: 600;
           font-size: 1.5rem;
         }
@@ -1011,7 +1054,7 @@ main {
 }
 
 .dashboard-main {
-  background-color: $bg-color;
+  background-color: var(--bg-color);
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -1035,9 +1078,9 @@ main {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .dashboard-main {
-    background-color: $bg-color;
+    background-color: var(--bg-color);
     padding: 0;
 
     .side-bar {
@@ -1050,7 +1093,7 @@ main {
       list-style: none;
       width: 25%;
       height: 100%;
-      background-color: $secondary-700;
+      background-color: var(--second-bg);
       margin-top: 0;
       margin-bottom: 0;
       z-index: 1;
@@ -1061,9 +1104,14 @@ main {
         gap: 2rem;
 
         a {
-          color: $secondary-300;
+          color: #b49dfe;
           font-weight: 600;
           font-size: 1.5rem;
+          &:hover,
+          &:active {
+            color: $primary-500;
+            // text-shadow: 4px 4px 4px rgba(243, 239, 239, 0.2);
+          }
         }
 
         img {
@@ -1136,7 +1184,7 @@ main {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   #main-page {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1152,10 +1200,12 @@ main {
     min-height: 4rem;
     padding: 1rem;
     font-size: 1.5rem;
-    color: $secondary-300;
+    color: #b49dfe;
     border: 0;
     outline: none;
     border: 0.2rem solid $primary-500;
+    background-color: var(--second-bg);
+    font-weight: bold;
   }
 
   .tasks {
@@ -1166,8 +1216,9 @@ main {
     li {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      background-color: $secondary-100;
-      color: $secondary-300;
+      background-color: var(--second-bg);
+      color: #b49dfe;
+      font-weight: bold;
       padding: 1rem;
       display: flex;
       justify-content: space-between;
@@ -1180,11 +1231,12 @@ main {
     }
 
     .task button {
-      background-color: $secondary-100;
+      background-color: var(--second-bg);
     }
 
     input[type='checkbox'] {
       accent-color: $primary-500;
+      width: 20px;
     }
     input[type='checkbox']:checked + p {
       /* color:red; */
@@ -1202,7 +1254,7 @@ main {
 
 .sticky__heading {
   text-align: center;
-  color: $secondary-700;
+  color: var(--second-bg);
   font-size: 2.4rem;
   font-weight: 700;
 }
@@ -1240,7 +1292,7 @@ main {
     min-height: 30rem;
     max-height: 30rem;
     /* background-color: #F3F5F7; */
-    background-color: $primary-100;
+    background-color: var(--second-bg);
     overflow: auto;
 
     .sticky-initial {
@@ -1252,24 +1304,25 @@ main {
         width: 100%;
         font-size: 2rem;
         font-weight: 700;
-        color: $primary-500;
+        color: $primary-400;
         outline: none;
         border: 0;
-        background-color: #e7defe;
+        background-color: var(--second-bg);
       }
 
       .note-area {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $secondary-300;
+        color: var(--secondary-text);
         width: 100%;
         outline: none;
         border: 0;
-        background-color: #e7defe;
+        background-color: var(--second-bg);
+        resize: none;
       }
 
       .note-area::placeholder {
-        color: $secondary-300;
+        color: #b49dfe;
       }
 
       .card__heading::placeholder {
@@ -1299,12 +1352,13 @@ main {
         .edit-note-btn,
         .delete-note-btn {
           /* background-color: var(--primary-500); */
-          background-color: $primary-100;
+          background-color: var(--second-bg);
           color: white;
           border-radius: 0.5rem;
-          padding: 0rem 2rem;
+          padding: 0rem 0.6rem;
           font-size: 1.2rem;
           font-weight: 700;
+          margin: 0;
         }
 
         .edit-note-icon {
@@ -1339,7 +1393,7 @@ main {
   justify-content: center;
   .pomodoro__heading {
     text-align: center;
-    color: $secondary-700;
+    color: var(--second-bg);
     font-size: 2.4rem;
     font-weight: 700;
   }
@@ -1348,7 +1402,7 @@ main {
     min-width: 32rem;
     max-width: 32rem;
     // background-color: $primary-100;
-    background-color: $secondary-700;
+    background-color: var(--second-bg);
     color: #7c5cfc;
     font-weight: 700;
     font-size: 1.5rem;
@@ -1366,8 +1420,8 @@ main {
   .pomodoro__body {
     @include flexColumn-alignItemsOnlyCenter();
     justify-content: center;
-    background-color: $primary-100;
-    // background-color: $secondary-700;
+    // background-color: $primary-100;
+    background-color: var(--second-bg);
     padding: 1rem;
     border-radius: 0.5rem;
     min-width: 34.5rem;
@@ -1385,34 +1439,45 @@ main {
         color: white;
       }
 
-      #pomodoro {
-        background-color: $primary-300;
-      }
+      // #pomodoro {
+      //   background-color: $primary-300;
+      // }
 
-      #short-break {
-        background-color: $primary-400;
-      }
+      // #short-break {
+      //   background-color: $primary-400;
+      // }
 
+      #pomodoro,
+      #short-break,
       #long-break {
         background-color: $primary-500;
+        &:focus {
+          background-color: var(--bg-color);
+        }
       }
     }
 
     .initial-time {
-      color: $secondary-400;
+      color: var(--secondary-text);
       font-weight: 700;
       font-size: 6rem;
     }
 
-    #start-pause {
+    .pomodoro-btns {
+      display: flex;
       width: 100%;
-      color: white;
-      font-size: 1.5rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      background-color: $primary-500;
+      #start-pause,
+      #reset-pomodoro {
+        width: 50%;
+        color: white;
+        margin: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $primary-500;
+      }
     }
   }
 }
@@ -1436,11 +1501,11 @@ main {
 }
 
 .initial-container {
-  background-color: $primary-200;
+  background-color: var(--second-bg);
   margin: 4rem;
   min-width: 45.8rem;
   min-height: 29rem;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1452,38 +1517,36 @@ main {
 
 #timer {
   font-size: 6rem;
-  color: $bg-color;
+  font-weight: bold;
+  color: var(--secondary-text);
 }
 
-#play {
-  background-color: #7c5cfc;
-}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  #play {
+    background-color: #7c5cfc;
+  }
 
-#reset {
-  background-color: $primary-400;
-  width: 3.1rem;
-  height: 3.1rem;
-}
-
-i {
-  width: 3rem;
-  height: 3rem;
-  color: white;
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-button {
-  outline: none;
-  border: 0;
-  margin: 0 1rem;
-  cursor: pointer;
-  background-color: $primary-500;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  #reset {
+    background-color: $primary-400;
+    // width: 3.1rem;
+    // height: 3.1rem;
+  }
+  button {
+    outline: none;
+    border: 0;
+    margin: 0 1rem;
+    cursor: pointer;
+    background-color: $primary-500;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 50%;
+  }
 }
 
 #time-tracker-container {
@@ -1492,7 +1555,7 @@ button {
   align-items: center;
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .initial-container {
     scale: 1;
   }
@@ -1502,182 +1565,9 @@ button {
   height: 100vh;
 }
 
-:root {
-  --purple: hsl(259, 100%, 65%);
-  --light-red: hsl(0, 100%, 67%);
-  --white: hsl(0, 0%, 100%);
-  --off-white: hsl(0, 0%, 94%);
-  --light-grey: hsl(0, 0%, 86%);
-  --smokey-grey: hsl(0, 1%, 44%);
-  --off-black: hsl(0, 0%, 8%);
-}
-
-//
-.age-main-container {
-  background-color: var(--white);
-  min-height: 45rem;
-  min-width: 30rem;
-  max-width: 30rem;
-  border-radius: 3rem;
-  border-bottom-right-radius: 10rem;
-  padding: 3rem;
-  .date-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    gap: 1rem;
-  }
-
-  .date-container label {
-    font-weight: 400;
-    color: var(--smokey-grey);
-    font-size: 1.1rem;
-    letter-spacing: 0.2rem;
-  }
-
-  input {
-    width: 7rem;
-    height: 4.5rem;
-    border-radius: 0.5rem;
-    outline: none;
-    border: 0;
-    border: 1px solid var(--light-grey);
-    font-size: 1.8rem;
-    padding: 1rem;
-  }
-
-  input:hover,
-  input:focus {
-    border-color: var(--purple);
-  }
-
-  .purple-btn:hover,
-  .purple-btn:active {
-    background-color: black;
-  }
-
-  .c {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .result {
-    display: flex;
-    flex-direction: column;
-    margin-top: -4rem;
-    margin-bottom: 3rem;
-  }
-
-  .result p {
-    margin-bottom: -2rem;
-    font-size: 4rem;
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  #year-purple,
-  #month-purple,
-  #day-purple {
-    color: var(--purple);
-  }
-
-  hr {
-    margin-top: 6rem;
-    border: 0.1rem solid var(--light-grey);
-    border-top: 0;
-  }
-
-  .purple-btn {
-    background-color: var(--purple);
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    left: 35%;
-    top: -35px;
-  }
-
-  .arrow-icon {
-    width: 60%;
-  }
-
-  .alert-day,
-  .alert-month,
-  .alert-year,
-  .alert-empty {
-    color: var(--light-red);
-    font-style: italic;
-    text-transform: none;
-    letter-spacing: 0;
-    margin-top: 0rem;
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .age-main-container {
-    min-width: 50rem;
-    min-height: 40rem;
-    border-radius: 1.5rem;
-    border-bottom-right-radius: 10rem;
-
-    .date-container {
-      display: flex;
-      justify-content: flex-start;
-      font-size: 1rem;
-      letter-spacing: 0.15rem;
-      gap: 2rem;
-    }
-
-    input {
-      width: 9rem;
-      height: 4rem;
-      border-radius: 0.5rem;
-      font-size: 2rem;
-    }
-
-    .result p {
-      margin-bottom: -6rem;
-      font-size: 6rem;
-      font-weight: 800;
-    }
-
-    .result {
-      margin-top: -10rem;
-    }
-
-    hr {
-      margin-top: 3rem;
-    }
-
-    .purple-btn {
-      left: 90%;
-      top: -3.5rem;
-    }
-
-    .arrow-icon {
-      width: 70%;
-    }
-  }
-}
-
 .sign-up-main,
 .login-main {
+  // background: url(images/bg-pattern.png);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -1692,7 +1582,7 @@ button {
     gap: 2rem;
 
     label {
-      color: $secondary-300;
+      color: #b49dfe;
       font-size: 1.5rem;
       font-weight: 600;
     }
@@ -1702,8 +1592,8 @@ button {
       min-width: 30rem;
       margin-top: -1rem;
       padding: 0.5rem;
-      background-color: $secondary-700;
-      color: $secondary-300;
+      background-color: var(--second-bg);
+      color: #b49dfe;
       font-size: 1.5rem;
       font-weight: 600;
       outline: 0;
@@ -1711,6 +1601,17 @@ button {
 
     button {
       margin: 0;
+      outline: none;
+      border: 0;
+
+      cursor: pointer;
+      background-color: $primary-500;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      width: 100%;
     }
 
     .question-sign-up,
@@ -1719,7 +1620,7 @@ button {
       color: $secondary-400;
       font-weight: 600;
       a {
-        color: $primary-300;
+        color: #b49dfe;
       }
     }
   }
@@ -1731,4 +1632,10 @@ button {
 
 .dashboard-main {
   height: 100vh;
+}
+
+.indicator {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b49dfe;
 }

@@ -221,3 +221,9 @@ longBreakBtn.addEventListener('click', function (e) {
   longBreakSpl();
   initialTime.innerText = '15:00';
 });
+
+const resetPomodoro = document.getElementById('reset-pomodoro');
+
+resetPomodoro.addEventListener('click', () => {
+  location.reload();
+});
