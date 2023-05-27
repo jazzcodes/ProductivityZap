@@ -142,3 +142,9 @@ const seeNotes = document.querySelector('.seeNotes');
 seeNotes.addEventListener('click', () => {
   window.open('../pages/sticky-notes.html', '_self');
 });
+
+const refreshBtn = document.querySelector('.refresh');
+
+refreshBtn.addEventListener('click', () => {
+  location.reload();
+});
