@@ -11,7 +11,8 @@ async function loadData() {
   const { data: todo, error } = await supabase
     .from('todo')
     .select('*')
-    .eq('user_id', userId);
+    .eq('user_id', userId)
+    .order('id', { ascending: true });
   // console.log(error);
   // console.log(todo);
 

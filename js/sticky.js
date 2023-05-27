@@ -19,7 +19,8 @@ async function loadData() {
   const { data: notesLoad, errorLoad } = await supabase
     .from('notes')
     .select('*')
-    .eq('user_id', userId);
+    .eq('user_id', userId)
+    .order('id', { ascending: true });
   // console.log(errorLoad);
   // console.log(notesLoad);
 
@@ -120,12 +121,20 @@ function newNote() {
 addNoteBtn.addEventListener('click', (e) => {
   e.preventDefault();
   newNote();
-  location.reload();
+  // location.reload();
+
   // console.log('Add clicked');
 });
-cancelNoteBtn.addEventListener('click', () => {
+cancelNoteBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   location.reload();
   // console.log('cancelled');
 });
 
 loadData();
+
+const refreshBtn = document.querySelector('.refresh');
+
+refreshBtn.addEventListener('click', () => {
+  location.reload();
+});

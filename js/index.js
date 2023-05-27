@@ -19,50 +19,6 @@ function openGlobalMenu() {
 globalMenuCloseBtn.addEventListener('click', closeGlobalMenu);
 mobileMenuOpenBtn.addEventListener('click', openGlobalMenu);
 
-const sun = document.querySelector('.sun');
-const moon = document.querySelector('.moon');
-
-function setTheme(themeName) {
-  localStorage.setItem('theme', themeName);
-  document.documentElement.className = themeName;
-}
-
-sun.addEventListener('click', () => {
-  if (localStorage.getItem('theme') === 'theme-dark') {
-    setTheme('theme-light');
-    moon.style.display = 'initial';
-    sun.style.display = 'none';
-  } else {
-    setTheme('theme-dark');
-    moon.style.display = 'none';
-    sun.style.display = 'initial';
-  }
-});
-
-moon.addEventListener('click', () => {
-  if (localStorage.getItem('theme') === 'theme-dark') {
-    setTheme('theme-light');
-    moon.style.display = 'initial';
-    sun.style.display = 'none';
-  } else {
-    setTheme('theme-dark');
-    moon.style.display = 'none';
-    sun.style.display = 'initial';
-  }
-});
-
-(function () {
-  if (localStorage.getItem('theme') === 'theme-dark') {
-    setTheme('theme-dark');
-    moon.style.display = 'none';
-    sun.style.display = 'initial';
-  } else {
-    setTheme('theme-light');
-    moon.style.display = 'initial';
-    sun.style.display = 'none';
-  }
-})();
-
 const loginBtn = document.querySelector('.login');
 const signUpBtn = document.querySelector('.sign-up');
 
