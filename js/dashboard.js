@@ -124,14 +124,13 @@ async function displayFirstNote() {
     .eq('user_id', userId);
 
   notesLoad.forEach((note) => {
-    noteFirst.innerHTML = `        <div class="sticky__card-first" id="note-${note.id}">
-   
-    <input type="text" class="card__heading-first display-ch" id="heading-${note.id}" value="${note.heading}" readonly>
-
-    <textarea name="" class="note-area-first display-na" cols="30" rows="8" id="content-${note.id}" readonly>${note.content}</textarea>
-
-
-</div>`;
+    noteFirst.innerHTML = `
+    <div class="sticky__card-first" id="note-${note.id}">
+    <input type="text" class="card__heading-first display-ch" 
+    id="heading-${note.id}" value="${note.heading}" readonly>
+    <textarea name="" class="note-area-first display-na" cols="30" rows="8" 
+    id="content-${note.id}" readonly>${note.content}</textarea>
+    </div>`;
   });
 }
 

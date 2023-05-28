@@ -7,13 +7,11 @@ const mobileMenuOpenBtn = document.querySelector('.mobile-menu');
 function closeGlobalMenu() {
   mobileMenu.style.display = 'none';
   mobileMenuOpenBtn.style.display = 'initial';
-  // console.log('mobile menu closed');
 }
 
 function openGlobalMenu() {
   mobileMenu.style.display = 'flex';
   mobileMenuOpenBtn.style.display = 'none';
-  // console.log('mobile menu opened');
 }
 
 globalMenuCloseBtn.addEventListener('click', closeGlobalMenu);

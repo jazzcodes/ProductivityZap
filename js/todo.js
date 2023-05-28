@@ -13,13 +13,8 @@ async function loadData() {
     .select('*')
     .eq('user_id', userId)
     .order('id', { ascending: true });
-  // console.log(error);
-  // console.log(todo);
 
   todo.forEach((task) => {
-    // console.log(task.id);
-    // console.log(task.task);
-
     //display data
 
     tasksList.innerHTML += `
@@ -27,12 +22,11 @@ async function loadData() {
         <div class="task-check">
         <input type="checkbox" class="done" name="${task.id}" id=""> 
         <p class="strikethrough"> ${task.task} </p>
-         </div>
-         <button class="delete-task" name=${task.id}>
-         <img src="../images/delete-btn.svg" alt="" class="del-icon"> 
-         </button>
-         </li>
-
+        </div>
+        <button class="delete-task" name=${task.id}>
+        <img src="../images/delete-btn.svg" alt="" class="del-icon"> 
+        </button>
+        </li>
         `;
 
     // handle delete
@@ -41,7 +35,6 @@ async function loadData() {
 
     deleteBtns.forEach((del) => {
       del.addEventListener('click', async function handleDelete() {
-        // console.log('deleted', del.name);
         const { data: delData, delError } = await supabase
           .from('todo')
           .delete()
@@ -52,47 +45,31 @@ async function loadData() {
       });
     });
 
-    // console.log(tasksList);
-    const doneTask = document.querySelectorAll('.task .task-check .done'); // checkboxes
-    // console.log(doneTask);
+    const doneTask = document.querySelectorAll('.task .task-check .done');
+    // checkboxes
 
     async function handleCheck() {
-      // console.log(tasksList);
       const taskItem = document.querySelectorAll('.task .task-check .done');
-      // console.log(taskItem);
 
-      const { data: todoNew, errorNew } = await supabase
+      const { data: todoDone, errorDone } = await supabase
         .from('todo')
         .select('id')
         .eq('done', 'true')
         .eq('user_id', userId);
-      // console.log(errorNew);
-      // console.log(todoNew);
 
-      const todoNew2 = todoNew.map((a) => a.id);
+      const todoDoneArray = todoDone.map((a) => a.id);
 
       taskItem.forEach((t) => {
-        // console.log(todoNew2);
-        // console.log('true-btn-name', t.name);
-        if (todoNew2.includes(Number(t.name))) {
-          // console.log(t.name, 'is there');
+        if (todoDoneArray.includes(Number(t.name))) {
           t.checked = true;
-        } else {
-          // console.log('not there');
         }
       });
     }
     // done status
     doneTask.forEach((done) => {
-      // console.log(done);
-
       done.addEventListener('change', () => {
-        // console.log('clicked');
-        // console.log(done.checked);
         const taskID = done.name;
         task.done = done.checked;
-
-        // console.log('status changed ID:', taskID);
 
         async function handleDone() {
           const { data: doneData, error: doneError } = await supabase
@@ -103,9 +80,6 @@ async function loadData() {
         }
 
         handleDone();
-        // handleCheck();
-
-        // console.log('new status', task.done);
       });
 
       handleCheck();
@@ -121,7 +95,7 @@ inputTask.addEventListener('keypress', async function insertData(event) {
   if (event.key === 'Enter') {
     event.preventDefault();
     let taskEntered = inputTask.value;
-    // console.log(taskEntered);
+
     const { data: todo, error } = await supabase.from('todo').insert([
       {
         task: taskEntered,

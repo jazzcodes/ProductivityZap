@@ -46,8 +46,6 @@ function stopWatch() {
   ).innerText = `${leadingHours}:${leadingMinutes}:${leadingSeconds}`;
 }
 
-// window.setInterval(stopWatch, 1000); // time in milli seconds
-
 startStopBtn.addEventListener('click', function () {
   if (timerStatus === 'stopped') {
     timeInterval = window.setInterval(stopWatch, 1000);

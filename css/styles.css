@@ -311,9 +311,6 @@ template {
 html {
   font-size: 62.5%;
   height: 100vh;
-  /* display: flex;
-      flex-direction: column;
-      align-items: center; */
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden; }
 
@@ -575,12 +572,10 @@ a {
   #index-container .sign-up {
     width: 20%; } }
 
+/* Header */
 header {
-  /* margin:2rem; */
-  min-width: 100vw;
-  /* border: 2px solid pink; */ }
+  min-width: 100vw; }
   header nav {
-    /* border: 2px solid purple; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -625,7 +620,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* border:2px solid yellowgreen; */
     border-radius: 1rem;
     min-width: 20%;
     padding: 2rem;
@@ -647,10 +641,9 @@ header {
   .nav__right__user-profile {
     gap: 1rem; } }
 
+/* Main */
 main {
-  /* margin:2rem; */
-  padding: 2rem;
-  /* height: 90vh;  */ }
+  padding: 2rem; }
 
 .dashboard-header {
   width: 100vw;
@@ -761,6 +754,102 @@ main {
     padding: 4rem;
     height: 100%; }
 
+.dashboard-index {
+  height: 100vh; }
+
+#dashboard-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; }
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; }
+  .insights .todo-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 303px; }
+    .insights .todo-insights .pending,
+    .insights .todo-insights .done {
+      background-color: #0d121f;
+      padding: 2rem;
+      border-radius: 0.5rem; }
+      .insights .todo-insights .pending h2,
+      .insights .todo-insights .done h2 {
+        font-size: 1.8rem;
+        color: #9f84fd;
+        font-weight: bold;
+        text-decoration: underline; }
+      .insights .todo-insights .pending ul,
+      .insights .todo-insights .done ul {
+        list-style: none;
+        padding-left: 0; }
+        .insights .todo-insights .pending ul li,
+        .insights .todo-insights .done ul li {
+          color: #90a3bf;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem; }
+
+.firstNote {
+  background-color: #0d121f;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .firstNote h2 {
+    color: #9f84fd;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: underline; }
+  .firstNote .firstNote-matter {
+    display: flex;
+    flex-direction: column; }
+    .firstNote .firstNote-matter .sticky__card-first {
+      display: flex;
+      flex-direction: column; }
+      .firstNote .firstNote-matter .sticky__card-first .card__heading-first {
+        background-color: #0d121f;
+        color: #e7defe;
+        font-size: 1.5rem;
+        font-weight: bold;
+        outline: none;
+        border: 0; }
+      .firstNote .firstNote-matter .sticky__card-first .note-area-first {
+        background-color: #0d121f;
+        color: #90a3bf;
+        font-size: 1.5rem;
+        font-weight: bold;
+        outline: none;
+        border: 0;
+        resize: none; }
+  .firstNote button {
+    border: 0;
+    color: white;
+    background-color: #9f84fd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem; }
+
+@media screen and (min-width: 720px) {
+  #dashboard-main-content .insights {
+    flex-direction: row; }
+  #dashboard-main-content .todo-insights {
+    width: 50%; } }
+
+.refresh {
+  width: 3rem;
+  cursor: pointer; }
+
 @media screen and (min-width: 720px) {
   .dashboard-main {
     background-color: #1a202c;
@@ -792,101 +881,51 @@ main {
         .dashboard-main .side-bar li img {
           width: 3rem; } }
 
-.container__header h1 {
-  font-weight: 600;
-  color: #7c5cfc; }
-
-.conatiner__body p {
-  font-weight: 600; }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
-  gap: 1rem;
-  text-align: center;
-  background-color: #e7defe;
-  padding: 2rem;
-  border-radius: 2rem;
-  box-shadow: 1rem 1rem 0.5rem 0rem rgba(0, 0, 0, 0.75);
-  min-width: 27.5rem;
-  max-width: 27.5rem; }
-
-.quote,
-.reminder {
-  max-width: 40rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: -0.5rem; }
-
-.author {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #7c5cfc;
-  font-weight: 600; }
-
-.change-quote {
-  border-radius: 0.5rem;
-  outline: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  padding: 1.5rem;
-  background-color: #7c5cfc;
-  margin-top: 1rem;
-  min-width: 12rem; }
-  .change-quote a {
-    color: white; }
-
 @media screen and (min-width: 720px) {
   #main-page {
     flex-direction: row;
     flex-wrap: wrap; } }
 
 /* To-do List */
-#to-do-container #add-task {
-  min-width: 30rem;
-  min-height: 4rem;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #b49dfe;
-  border: 0;
-  outline: none;
-  border: 0.2rem solid #7c5cfc;
-  background-color: #0d121f;
-  font-weight: bold; }
-
-#to-do-container .tasks {
-  list-style: none;
-  padding-left: 0;
-  /* padding: 1rem; */ }
-  #to-do-container .tasks li {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    background-color: #0d121f;
-    color: #b49dfe;
-    font-weight: bold;
+#to-do-container {
+  min-height: 100vh; }
+  #to-do-container #add-task {
+    min-width: 30rem;
+    min-height: 4rem;
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-  #to-do-container .tasks .del-icon {
-    width: 2rem;
-    height: 2rem; }
-  #to-do-container .tasks .task button {
-    background-color: #0d121f; }
-  #to-do-container .tasks input[type='checkbox'] {
-    accent-color: #7c5cfc;
-    width: 20px; }
-  #to-do-container .tasks input[type='checkbox']:checked + p {
-    /* color:red; */
-    text-decoration: line-through; }
-  #to-do-container .tasks .task-check {
-    display: flex;
-    gap: 1rem; }
+    font-size: 1.5rem;
+    color: #b49dfe;
+    border: 0;
+    outline: none;
+    border: 0.2rem solid #7c5cfc;
+    background-color: #0d121f;
+    font-weight: bold; }
+  #to-do-container .tasks {
+    list-style: none;
+    padding-left: 0; }
+    #to-do-container .tasks li {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background-color: #0d121f;
+      color: #b49dfe;
+      font-weight: bold;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    #to-do-container .tasks .del-icon {
+      width: 2rem;
+      height: 2rem; }
+    #to-do-container .tasks .task button {
+      background-color: #0d121f; }
+    #to-do-container .tasks input[type='checkbox'] {
+      accent-color: #7c5cfc;
+      width: 20px; }
+    #to-do-container .tasks input[type='checkbox']:checked + p {
+      text-decoration: line-through; }
+    #to-do-container .tasks .task-check {
+      display: flex;
+      gap: 1rem; }
 
 .sticky__heading {
   text-align: center;
@@ -916,13 +955,11 @@ main {
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    /* border: 2px solid palevioletred; */
     border-radius: 0.5rem;
     min-width: 32rem;
     max-width: 32rem;
     min-height: 30rem;
     max-height: 30rem;
-    /* background-color: #F3F5F7; */
     background-color: #0d121f;
     overflow: auto; }
     #sticky-notes-container .sticky__card .sticky-initial {
@@ -947,9 +984,9 @@ main {
         background-color: #0d121f;
         resize: none; }
       #sticky-notes-container .sticky__card .sticky-initial .note-area::placeholder {
-        color: #b49dfe; }
+        color: #cebefe; }
       #sticky-notes-container .sticky__card .sticky-initial .card__heading::placeholder {
-        color: #7c5cfc; }
+        color: #9f84fd; }
     #sticky-notes-container .sticky__card .card__footer {
       display: flex;
       justify-content: space-between;
@@ -967,7 +1004,6 @@ main {
         display: flex; }
         #sticky-notes-container .sticky__card .card__footer .note-btns .edit-note-btn,
         #sticky-notes-container .sticky__card .card__footer .note-btns .delete-note-btn {
-          /* background-color: var(--primary-500); */
           background-color: #0d121f;
           color: white;
           border-radius: 0.5rem;
@@ -1204,96 +1240,3 @@ main {
     font-weight: bold;
     color: #b49dfe;
     display: initial; } }
-
-.dashboard-index {
-  height: 100vh; }
-
-#dashboard-main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; }
-
-.insights {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; }
-  .insights .todo-insights {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 303px; }
-    .insights .todo-insights .pending,
-    .insights .todo-insights .done {
-      background-color: #0d121f;
-      padding: 2rem;
-      border-radius: 0.5rem; }
-      .insights .todo-insights .pending h2,
-      .insights .todo-insights .done h2 {
-        font-size: 1.8rem;
-        color: #9f84fd;
-        font-weight: bold; }
-      .insights .todo-insights .pending ul,
-      .insights .todo-insights .done ul {
-        list-style: none;
-        padding-left: 0; }
-        .insights .todo-insights .pending ul li,
-        .insights .todo-insights .done ul li {
-          color: #90a3bf;
-          font-size: 1.5rem;
-          font-weight: bold; }
-
-.firstNote {
-  background-color: #0d121f;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
-  .firstNote h2 {
-    color: #9f84fd;
-    font-weight: bold;
-    font-size: 1.8rem; }
-  .firstNote .firstNote-matter {
-    display: flex;
-    flex-direction: column; }
-    .firstNote .firstNote-matter .sticky__card-first {
-      display: flex;
-      flex-direction: column; }
-      .firstNote .firstNote-matter .sticky__card-first .card__heading-first {
-        background-color: #0d121f;
-        color: #e7defe;
-        font-size: 1.5rem;
-        font-weight: bold;
-        outline: none;
-        border: 0; }
-      .firstNote .firstNote-matter .sticky__card-first .note-area-first {
-        background-color: #0d121f;
-        color: #90a3bf;
-        font-size: 1.5rem;
-        font-weight: bold;
-        outline: none;
-        border: 0;
-        resize: none; }
-  .firstNote button {
-    border: 0;
-    color: white;
-    background-color: #9f84fd;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 1.5rem; }
-
-@media screen and (min-width: 720px) {
-  #dashboard-main-content .insights {
-    flex-direction: row; }
-  #dashboard-main-content .todo-insights {
-    width: 50%; } }
-
-.refresh {
-  width: 3rem;
-  cursor: pointer; }
