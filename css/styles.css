@@ -387,8 +387,8 @@ body {
   gap: 5rem;
   list-style: none;
   padding: 3rem;
-  position: fixed;
-  top: 12rem;
+  position: absolute;
+  top: 0rem;
   right: 0rem;
   background-color: #1a202c;
   height: 100vh;
@@ -673,7 +673,7 @@ main {
         align-items: flex-start;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 12rem;
         background-color: #0d121f;
         height: 100vh;
         z-index: 1;
