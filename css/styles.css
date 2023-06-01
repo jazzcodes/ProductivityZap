@@ -673,7 +673,6 @@ main {
         align-items: flex-start;
         position: fixed;
         left: 0;
-        top: 0;
         background-color: #0d121f;
         height: 100vh;
         z-index: 1;
