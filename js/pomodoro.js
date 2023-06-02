@@ -18,8 +18,6 @@ function pomodoroSpl() {
   let minutes = 24;
 
   function pomodoro() {
-    // console.log(leadingMinutes, leadingSeconds);
-
     seconds--;
     if (seconds / 60 == 0) {
       minutes--;
@@ -91,8 +89,6 @@ function shortBreakSpl() {
   let minutes = 4;
 
   function pomodoro() {
-    // console.log(leadingMinutes, leadingSeconds);
-
     seconds--;
     if (seconds / 60 == 0) {
       minutes--;
@@ -162,8 +158,6 @@ function longBreakSpl() {
   let minutes = 14;
 
   function pomodoro() {
-    // console.log(leadingMinutes, leadingSeconds);
-
     seconds--;
     if (seconds / 60 == 0) {
       minutes--;
@@ -220,4 +214,10 @@ longBreakBtn.addEventListener('click', function (e) {
 
   longBreakSpl();
   initialTime.innerText = '15:00';
+});
+
+const resetPomodoro = document.getElementById('reset-pomodoro');
+
+resetPomodoro.addEventListener('click', () => {
+  location.reload();
 });

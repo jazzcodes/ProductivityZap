@@ -74,6 +74,7 @@
             alt=""
             class="dashboard-logo dashboard-desktop-logo"
         /></a>
+        <p class="indicator">Additional</p>
         <div class="profile">
           <p class="profile-user"></p>
           <img src="../images/arrow-down.svg" alt="" class="profile-dropdown" />
@@ -83,12 +84,6 @@
             >
               <img src="../images/close-btn.svg" alt="" />
             </button>
-            <!-- <li>
-              <img src="../images/settings.svg" alt="" /><a
-                href="../pages/settings.html"
-                >Settings</a
-              >
-            </li> -->
             <li>
               <img src="../images/logout.svg" alt="" /><a href="" class="logout"
                 >Logout</a
@@ -137,50 +132,9 @@
         </li>
       </ul>
 
-      <div class="main-content" id="additional-main-content">
-        <div class="age-main-container">
-          <div class="date-container">
-            <div class="day-c c">
-              <label for="day" class="label-d">Day</label>
-              <input type="number" id="day" placeholder="DD" />
-              <p class="error-day"></p>
-            </div>
-
-            <div class="month-c c">
-              <label for="month" class="label-m">Month</label>
-              <input type="number" id="month" placeholder="MM" />
-              <p class="error-month"></p>
-            </div>
-
-            <div class="year-c c">
-              <label for="year" class="label-y">Year</label>
-              <input type="number" id="year" placeholder="YYYY" />
-              <p class="error-year"></p>
-            </div>
-          </div>
-          <hr />
-          <div>
-            <button class="purple-btn">
-              <img src="../images/arrow-down.svg" alt="" class="arrow-icon" />
-            </button>
-          </div>
-          <div class="result">
-            <p id="year">
-              <span id="year-purple">--</span> <span id="r-years">years</span>
-            </p>
-            <p id="month">
-              <span id="month-purple">--</span>
-              <span id="r-months"> months </span>
-            </p>
-            <p id="day">
-              <span id="day-purple">--</span> <span id="r-days">days</span>
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="main-content" id="additional-main-content"></div>
     </main>
 
     <script type="module" src="../js/dashboard.js"></script>
-    <script type="module" src="../js/additional.js"></script>
   </body>
 </html>

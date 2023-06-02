@@ -1,4 +1,4 @@
-// Normalize
+// Normalize CSS
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -351,7 +351,7 @@ template {
   display: none;
 }
 
-// Dashboard
+// Landing Page
 *,
 *::after,
 *::before {
@@ -370,7 +370,7 @@ $secondary-200: #c3d4e9;
 $secondary-400: #596780;
 $secondary-700: #0d121f;
 $bg-color: #1a202c;
-$text-color: white;
+
 $gradient: linear-gradient(
   90deg,
   rgba(124, 92, 252, 1) 0%,
@@ -381,11 +381,8 @@ $gradient: linear-gradient(
 html {
   font-size: 62.5%;
   height: 100vh;
-  /* display: flex;
-      flex-direction: column;
-      align-items: center; */
   font-family: 'Plus Jakarta Sans', sans-serif;
-  // background-color: #B49DFE;
+  overflow-x: hidden;
 }
 
 @mixin flexRow-alignItemsCenter-justifySpaceBW() {
@@ -398,11 +395,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.light-mode {
-  $bg-color: white;
-  $text-color: $secondary-400;
 }
 
 body {
@@ -429,11 +421,10 @@ body {
   }
 
   .index-products {
-    // align-self: flex-start;
-
     h2 {
       color: $primary-500;
       font-size: 3rem;
+      text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
     }
 
     ul {
@@ -442,18 +433,18 @@ body {
 
       li {
         display: flex;
-        gap: 1rem;
-        // justify-content: flex-start;
+        gap: 3rem;
 
         .list-heading {
           color: white;
           font-size: 1.5rem;
-          font-weight: 500;
+          font-weight: bold;
         }
 
         .list-matter {
           color: $primary-200;
           font-size: 1.5rem;
+          font-weight: bold;
         }
       }
 
@@ -464,7 +455,7 @@ body {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   #index-container {
     .index-products {
       h2 {
@@ -475,12 +466,11 @@ body {
       ul {
         li {
           gap: 2rem;
-          // justify-content: flex-start;
 
           .list-heading {
             color: white;
             font-size: 1.5rem;
-            font-weight: 500;
+            font-weight: bold;
           }
 
           .list-matter {
@@ -512,16 +502,26 @@ body {
     display: none;
     flex-direction: column;
     align-items: baseline;
-    gap: 2rem;
+    gap: 5rem;
     list-style: none;
     padding: 3rem;
     position: absolute;
-    top: -2rem;
+    top: 0rem;
     right: 0rem;
     background-color: $bg-color;
+    height: 100vh;
+    margin-bottom: 0;
+    margin-top: 0;
 
     .sun {
       width: 3rem;
+      cursor: pointer;
+      display: none;
+    }
+    .moon {
+      width: 3rem;
+      cursor: pointer;
+      display: none;
     }
 
     .global__menu__close-btn {
@@ -535,24 +535,19 @@ body {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 700;
-      color: $secondary-300;
+      color: white;
 
       &:hover {
-        color: $primary-300;
+        color: $primary-400;
       }
     }
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .mobile-menu {
     display: none;
   }
-
-  // .desktop-menu{
-  //   display: flex;
-
-  // }
 
   .desktop-menu {
     display: flex;
@@ -561,13 +556,21 @@ body {
     list-style: none;
     .sun {
       width: 3rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    .moon {
+      width: 3rem;
+      cursor: pointer;
+      display: none;
     }
 
     a {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 700;
-      color: $text-color;
+      color: white;
 
       &:hover {
         color: $primary-400;
@@ -585,7 +588,7 @@ body {
   }
 }
 
-@media screen and (max-width: 71.9rem) {
+@media screen and (max-width: 719px) {
   .desktop-menu {
     display: none;
   }
@@ -596,20 +599,17 @@ body {
 }
 
 .index-benefits {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
   .benefits-main-heading {
     color: $primary-500;
     font-size: 3rem;
+    text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
   }
 
   .benefits-content {
     color: $secondary-200;
     font-size: 1.5rem;
     line-height: 1.5;
+    font-weight: bold;
   }
 
   .benefits-imgs {
@@ -624,7 +624,7 @@ body {
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .index-benefits {
     .benefits-main-heading {
       font-size: 5rem;
@@ -673,6 +673,7 @@ body {
     display: flex;
     flex-direction: column;
     color: $primary-200;
+    font-weight: bold;
   }
 
   .socials {
@@ -683,6 +684,11 @@ body {
     a {
       text-decoration: none;
       color: $primary-200;
+      font-weight: bold;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 }
@@ -707,11 +713,6 @@ a {
   text-decoration: none;
 }
 
-// .index-container
-// {
-//   padding: 2rem;
-// }
-
 .index-hero {
   display: flex;
   flex-direction: column;
@@ -728,21 +729,23 @@ a {
     font-size: 1.6rem;
     color: $secondary-200;
     line-height: 1.5;
+    font-weight: bold;
   }
 
   .hero__image {
-    min-width: 100%;
-    min-height: 31rem;
+    width: 315px;
     background-color: $primary-200;
     font-size: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid white;
+    border-radius: 0.5rem;
   }
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .index-hero {
     justify-content: center;
     align-items: center;
@@ -758,6 +761,10 @@ a {
       max-width: 55rem;
       margin-top: -2rem;
     }
+
+    .hero__image {
+      min-width: 100%;
+    }
   }
 
   #index-container {
@@ -767,19 +774,13 @@ a {
   }
 }
 
-// /* Header */
+/* Header */
 header {
-  /* margin:2rem; */
   min-width: 100vw;
-  /* border: 2px solid pink; */
-  // height: 10vh;
 
   nav {
-    /* border: 2px solid purple; */
     @include flexRow-alignItemsCenter-justifySpaceBW();
     padding: 2rem;
-
-    // height: 10vh;
 
     .gradient-text {
       background-image: $gradient;
@@ -821,7 +822,6 @@ header {
     }
 
     .nav__logo {
-      // color: $secondary-400;
       font-weight: 800;
       font-size: 2rem;
     }
@@ -837,7 +837,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* border:2px solid yellowgreen; */
+
     border-radius: 1rem;
     min-width: 20%;
     padding: 2rem;
@@ -868,18 +868,12 @@ header {
   }
 }
 
-// /* Main */
+/* Main */
 main {
-  /* margin:2rem; */
   padding: 2rem;
-  /* height: 90vh;  */
 }
 
 // dashboard
-
-#dashboard-main-content {
-  height: 100vh;
-}
 
 .dashboard-header {
   width: 100vw;
@@ -916,12 +910,13 @@ main {
         padding: 2rem;
         list-style: none;
         align-items: flex-start;
-        position: absolute;
+        position: fixed;
         left: 0;
-        top: 11.5rem;
         background-color: $secondary-700;
         height: 100vh;
         z-index: 1;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       button {
@@ -934,9 +929,14 @@ main {
         align-items: center;
 
         a {
-          color: $secondary-300;
+          color: $primary-300;
           font-size: 1.5rem;
           font-weight: 600;
+
+          &:hover,
+          &:focus {
+            color: $primary-500;
+          }
         }
 
         img {
@@ -957,11 +957,10 @@ main {
     .profile-user {
       font-size: 1.5rem;
       font-weight: 600;
-      color: $secondary-300;
+      color: $primary-300;
     }
     ul {
       display: none;
-      // display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 2rem;
@@ -983,7 +982,7 @@ main {
         gap: 1rem;
 
         a {
-          color: $secondary-300;
+          color: $primary-300;
           font-weight: 600;
           font-size: 1.5rem;
         }
@@ -1016,10 +1015,8 @@ main {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  // height: 80vh;
   justify-content: center;
   align-items: center;
-  // justify-content: space-between;
 
   .side-bar {
     display: none;
@@ -1035,7 +1032,128 @@ main {
   }
 }
 
-@media screen and (min-width: 72rem) {
+#dashboard-main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.insights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  .todo-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 303px;
+
+    .pending,
+    .done {
+      background-color: $secondary-700;
+      padding: 2rem;
+      border-radius: 0.5rem;
+
+      h2 {
+        font-size: 1.8rem;
+        color: $primary-400;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+          color: $secondary-300;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.firstNote {
+  background-color: $secondary-700;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  // width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h2 {
+    color: $primary-400;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-decoration: underline;
+  }
+
+  .firstNote-matter {
+    display: flex;
+    flex-direction: column;
+
+    .sticky__card-first {
+      display: flex;
+      flex-direction: column;
+
+      .card__heading-first {
+        background-color: $secondary-700;
+        color: $primary-100;
+        font-size: 1.5rem;
+        font-weight: bold;
+        outline: none;
+        border: 0;
+      }
+
+      .note-area-first {
+        background-color: $secondary-700;
+        color: $secondary-300;
+        font-size: 1.5rem;
+        font-weight: bold;
+        outline: none;
+        border: 0;
+        resize: none;
+      }
+    }
+  }
+  button {
+    border: 0;
+    color: white;
+    background-color: $primary-400;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  #dashboard-main-content {
+    .insights {
+      flex-direction: row;
+    }
+
+    .todo-insights {
+      width: 50%;
+    }
+  }
+}
+
+.refresh {
+  width: 3rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 720px) {
   .dashboard-main {
     background-color: $bg-color;
     padding: 0;
@@ -1061,9 +1179,13 @@ main {
         gap: 2rem;
 
         a {
-          color: $secondary-300;
+          color: $primary-300;
           font-weight: 600;
           font-size: 1.5rem;
+          &:hover,
+          &:active {
+            color: $primary-500;
+          }
         }
 
         img {
@@ -1074,100 +1196,39 @@ main {
   }
 }
 
-//quotes
-
-.container__header {
-  h1 {
-    font-weight: 600;
-    color: $primary-500;
-  }
-}
-
-.conatiner__body {
-  p {
-    font-weight: 600;
-  }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 50vh;
-  gap: 1rem;
-  text-align: center;
-  background-color: $primary-100;
-  padding: 2rem;
-  border-radius: 2rem;
-  box-shadow: 1rem 1rem 0.5rem 0rem rgba(0, 0, 0, 0.75);
-  min-width: 27.5rem;
-  max-width: 27.5rem;
-}
-
-.quote,
-.reminder {
-  max-width: 40rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: -0.5rem;
-}
-
-.author {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: $primary-500;
-  font-weight: 600;
-}
-.change-quote {
-  border-radius: 0.5rem;
-  outline: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  padding: 1.5rem;
-  background-color: #7c5cfc;
-  margin-top: 1rem;
-  min-width: 12rem;
-
-  a {
-    color: white;
-  }
-}
-
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   #main-page {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 
-// to-do
-
 /* To-do List */
 #to-do-container {
+  min-height: 100vh;
   #add-task {
     min-width: 30rem;
     min-height: 4rem;
     padding: 1rem;
     font-size: 1.5rem;
-    color: $secondary-300;
+    color: $primary-300;
     border: 0;
     outline: none;
     border: 0.2rem solid $primary-500;
+    background-color: $secondary-700;
+    font-weight: bold;
   }
 
   .tasks {
     list-style: none;
     padding-left: 0;
-    /* padding: 1rem; */
 
     li {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      background-color: $secondary-100;
-      color: $secondary-300;
+      background-color: $secondary-700;
+      color: $primary-300;
+      font-weight: bold;
       padding: 1rem;
       display: flex;
       justify-content: space-between;
@@ -1180,14 +1241,14 @@ main {
     }
 
     .task button {
-      background-color: $secondary-100;
+      background-color: $secondary-700;
     }
 
     input[type='checkbox'] {
       accent-color: $primary-500;
+      width: 20px;
     }
     input[type='checkbox']:checked + p {
-      /* color:red; */
       text-decoration: line-through;
     }
 
@@ -1210,7 +1271,7 @@ main {
 #sticky-notes-container {
   display: flex;
   padding: 2rem;
-  // border: 2px solid gray;
+
   justify-content: space-evenly;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -1233,14 +1294,14 @@ main {
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    /* border: 2px solid palevioletred; */
+
     border-radius: 0.5rem;
     min-width: 32rem;
     max-width: 32rem;
     min-height: 30rem;
     max-height: 30rem;
-    /* background-color: #F3F5F7; */
-    background-color: $primary-100;
+
+    background-color: $secondary-700;
     overflow: auto;
 
     .sticky-initial {
@@ -1252,28 +1313,29 @@ main {
         width: 100%;
         font-size: 2rem;
         font-weight: 700;
-        color: $primary-500;
+        color: $primary-400;
         outline: none;
         border: 0;
-        background-color: #e7defe;
+        background-color: $secondary-700;
       }
 
       .note-area {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $secondary-300;
+        color: $secondary-200;
         width: 100%;
         outline: none;
         border: 0;
-        background-color: #e7defe;
+        background-color: $secondary-700;
+        resize: none;
       }
 
       .note-area::placeholder {
-        color: $secondary-300;
+        color: $primary-200;
       }
 
       .card__heading::placeholder {
-        color: $primary-500;
+        color: $primary-400;
       }
     }
 
@@ -1298,13 +1360,13 @@ main {
 
         .edit-note-btn,
         .delete-note-btn {
-          /* background-color: var(--primary-500); */
-          background-color: $primary-100;
+          background-color: $secondary-700;
           color: white;
           border-radius: 0.5rem;
-          padding: 0rem 2rem;
+          padding: 0rem 0.6rem;
           font-size: 1.2rem;
           font-weight: 700;
+          margin: 0;
         }
 
         .edit-note-icon {
@@ -1347,9 +1409,8 @@ main {
   .notification {
     min-width: 32rem;
     max-width: 32rem;
-    // background-color: $primary-100;
     background-color: $secondary-700;
-    color: #7c5cfc;
+    color: $primary-500;
     font-weight: 700;
     font-size: 1.5rem;
     padding: 1rem;
@@ -1357,7 +1418,6 @@ main {
     margin-bottom: 3rem;
     text-align: center;
     border-radius: 0.5rem;
-    // display: none;
     min-width: 45.3rem;
     max-width: 34.5rem;
     scale: 0.7;
@@ -1366,8 +1426,7 @@ main {
   .pomodoro__body {
     @include flexColumn-alignItemsOnlyCenter();
     justify-content: center;
-    background-color: $primary-100;
-    // background-color: $secondary-700;
+    background-color: $secondary-700;
     padding: 1rem;
     border-radius: 0.5rem;
     min-width: 34.5rem;
@@ -1385,34 +1444,37 @@ main {
         color: white;
       }
 
-      #pomodoro {
-        background-color: $primary-300;
-      }
-
-      #short-break {
-        background-color: $primary-400;
-      }
-
+      #pomodoro,
+      #short-break,
       #long-break {
         background-color: $primary-500;
+        &:focus {
+          background-color: $bg-color;
+        }
       }
     }
 
     .initial-time {
-      color: $secondary-400;
+      color: $secondary-200;
       font-weight: 700;
       font-size: 6rem;
     }
 
-    #start-pause {
+    .pomodoro-btns {
+      display: flex;
       width: 100%;
-      color: white;
-      font-size: 1.5rem;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      background-color: $primary-500;
+      #start-pause,
+      #reset-pomodoro {
+        width: 50%;
+        color: white;
+        margin: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $primary-500;
+      }
     }
   }
 }
@@ -1436,11 +1498,11 @@ main {
 }
 
 .initial-container {
-  background-color: $primary-200;
+  background-color: $secondary-700;
   margin: 4rem;
   min-width: 45.8rem;
   min-height: 29rem;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1452,38 +1514,35 @@ main {
 
 #timer {
   font-size: 6rem;
-  color: $bg-color;
+  font-weight: bold;
+  color: $secondary-200;
 }
 
-#play {
-  background-color: #7c5cfc;
-}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  #play {
+    background-color: $primary-500;
+  }
 
-#reset {
-  background-color: $primary-400;
-  width: 3.1rem;
-  height: 3.1rem;
-}
+  #reset {
+    background-color: $primary-400;
+  }
 
-i {
-  width: 3rem;
-  height: 3rem;
-  color: white;
-  border-radius: 8px;
-  padding: 0.5rem;
-}
-
-button {
-  outline: none;
-  border: 0;
-  margin: 0 1rem;
-  cursor: pointer;
-  background-color: $primary-500;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  button {
+    outline: none;
+    border: 0;
+    margin: 0 1rem;
+    cursor: pointer;
+    background-color: $primary-500;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 50%;
+  }
 }
 
 #time-tracker-container {
@@ -1492,7 +1551,7 @@ button {
   align-items: center;
 }
 
-@media screen and (min-width: 72rem) {
+@media screen and (min-width: 720px) {
   .initial-container {
     scale: 1;
   }
@@ -1502,180 +1561,6 @@ button {
   height: 100vh;
 }
 
-:root {
-  --purple: hsl(259, 100%, 65%);
-  --light-red: hsl(0, 100%, 67%);
-  --white: hsl(0, 0%, 100%);
-  --off-white: hsl(0, 0%, 94%);
-  --light-grey: hsl(0, 0%, 86%);
-  --smokey-grey: hsl(0, 1%, 44%);
-  --off-black: hsl(0, 0%, 8%);
-}
-
-//
-.age-main-container {
-  background-color: var(--white);
-  min-height: 45rem;
-  min-width: 30rem;
-  max-width: 30rem;
-  border-radius: 3rem;
-  border-bottom-right-radius: 10rem;
-  padding: 3rem;
-  .date-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    gap: 1rem;
-  }
-
-  .date-container label {
-    font-weight: 400;
-    color: var(--smokey-grey);
-    font-size: 1.1rem;
-    letter-spacing: 0.2rem;
-  }
-
-  input {
-    width: 7rem;
-    height: 4.5rem;
-    border-radius: 0.5rem;
-    outline: none;
-    border: 0;
-    border: 1px solid var(--light-grey);
-    font-size: 1.8rem;
-    padding: 1rem;
-  }
-
-  input:hover,
-  input:focus {
-    border-color: var(--purple);
-  }
-
-  .purple-btn:hover,
-  .purple-btn:active {
-    background-color: black;
-  }
-
-  .c {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .result {
-    display: flex;
-    flex-direction: column;
-    margin-top: -4rem;
-    margin-bottom: 3rem;
-  }
-
-  .result p {
-    margin-bottom: -2rem;
-    font-size: 4rem;
-    font-weight: 700;
-    font-style: italic;
-  }
-
-  #year-purple,
-  #month-purple,
-  #day-purple {
-    color: var(--purple);
-  }
-
-  hr {
-    margin-top: 6rem;
-    border: 0.1rem solid var(--light-grey);
-    border-top: 0;
-  }
-
-  .purple-btn {
-    background-color: var(--purple);
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    left: 35%;
-    top: -35px;
-  }
-
-  .arrow-icon {
-    width: 60%;
-  }
-
-  .alert-day,
-  .alert-month,
-  .alert-year,
-  .alert-empty {
-    color: var(--light-red);
-    font-style: italic;
-    text-transform: none;
-    letter-spacing: 0;
-    margin-top: 0rem;
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .age-main-container {
-    min-width: 50rem;
-    min-height: 40rem;
-    border-radius: 1.5rem;
-    border-bottom-right-radius: 10rem;
-
-    .date-container {
-      display: flex;
-      justify-content: flex-start;
-      font-size: 1rem;
-      letter-spacing: 0.15rem;
-      gap: 2rem;
-    }
-
-    input {
-      width: 9rem;
-      height: 4rem;
-      border-radius: 0.5rem;
-      font-size: 2rem;
-    }
-
-    .result p {
-      margin-bottom: -6rem;
-      font-size: 6rem;
-      font-weight: 800;
-    }
-
-    .result {
-      margin-top: -10rem;
-    }
-
-    hr {
-      margin-top: 3rem;
-    }
-
-    .purple-btn {
-      left: 90%;
-      top: -3.5rem;
-    }
-
-    .arrow-icon {
-      width: 70%;
-    }
-  }
-}
-
 .sign-up-main,
 .login-main {
   height: 100vh;
@@ -1683,16 +1568,17 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .sign-up-container,
   .login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // align-items: center;
+
     gap: 2rem;
 
     label {
-      color: $secondary-300;
+      color: $primary-300;
       font-size: 1.5rem;
       font-weight: 600;
     }
@@ -1703,7 +1589,7 @@ button {
       margin-top: -1rem;
       padding: 0.5rem;
       background-color: $secondary-700;
-      color: $secondary-300;
+      color: $primary-300;
       font-size: 1.5rem;
       font-weight: 600;
       outline: 0;
@@ -1711,6 +1597,17 @@ button {
 
     button {
       margin: 0;
+      outline: none;
+      border: 0;
+
+      cursor: pointer;
+      background-color: $primary-500;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      width: 100%;
     }
 
     .question-sign-up,
@@ -1729,6 +1626,15 @@ button {
   width: 10rem;
 }
 
-.dashboard-main {
-  height: 100vh;
+.indicator {
+  display: none;
+}
+
+@media screen and (min-width: 720px) {
+  .indicator {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-300;
+    display: initial;
+  }
 }

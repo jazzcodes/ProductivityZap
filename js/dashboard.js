@@ -1,5 +1,7 @@
 import { supabase } from '../lib/client.js';
 
+let userId = localStorage.getItem('userId');
+
 /* Mobile Menu */
 
 const mobileMenu = document.querySelector('.dashboard-open-mobile-menu');
@@ -68,4 +70,80 @@ logout.addEventListener('click', async (e) => {
     localStorage.setItem('userId', null);
     window.open('../pages/login.html', '_self');
   }
+});
+
+const pending = document.querySelector('.pending-list');
+const done = document.querySelector('.done-list');
+
+async function todoDataPending() {
+  const { data: todo, error } = await supabase
+    .from('todo')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('done', false)
+    .order('id', { ascending: true });
+
+  todo.forEach((task) => {
+    pending.innerHTML += `
+        <li id=${task.id} class="task-pending"> 
+        ${task.task}
+        </li>
+
+        `;
+  });
+}
+
+todoDataPending();
+
+async function todoDataDone() {
+  const { data: todo, error } = await supabase
+    .from('todo')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('done', true)
+    .order('id', { ascending: true });
+
+  todo.forEach((task) => {
+    done.innerHTML += `
+        <li id=${task.id} class="task-done"> 
+        ${task.task}
+        </li>
+
+        `;
+  });
+}
+
+todoDataDone();
+
+const noteFirst = document.querySelector('.firstNote-matter');
+
+async function displayFirstNote() {
+  const { data: notesLoad, errorLoad } = await supabase
+    .from('notes')
+    .select('*')
+    .eq('user_id', userId);
+
+  notesLoad.forEach((note) => {
+    noteFirst.innerHTML = `
+    <div class="sticky__card-first" id="note-${note.id}">
+    <input type="text" class="card__heading-first display-ch" 
+    id="heading-${note.id}" value="${note.heading}" readonly>
+    <textarea name="" class="note-area-first display-na" cols="30" rows="8" 
+    id="content-${note.id}" readonly>${note.content}</textarea>
+    </div>`;
+  });
+}
+
+displayFirstNote();
+
+const seeNotes = document.querySelector('.seeNotes');
+
+seeNotes.addEventListener('click', () => {
+  window.open('../pages/sticky-notes.html', '_self');
+});
+
+const refreshBtn = document.querySelector('.refresh');
+
+refreshBtn.addEventListener('click', () => {
+  location.reload();
 });

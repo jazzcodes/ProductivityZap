@@ -5,9 +5,6 @@ const signUpPassword = document.querySelector('.sign-up-password');
 const signUpEmail = document.querySelector('.sign-up-email');
 
 signUpBtn.addEventListener('click', async function signUpUser(e) {
-  //   console.log(signUpEmail.value);
-  //   console.log(signUpPassword.value);
-
   e.preventDefault();
 
   let { data: data, error: error } = await supabase.auth.signUp({
@@ -18,5 +15,12 @@ signUpBtn.addEventListener('click', async function signUpUser(e) {
     alert(error.message);
   } else {
     alert('Successfully signed up!');
+  }
+});
+
+signUpPassword.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    signUpBtn.click();
   }
 });

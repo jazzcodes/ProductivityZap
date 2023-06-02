@@ -75,6 +75,9 @@
             alt=""
             class="dashboard-logo dashboard-desktop-logo"
         /></a>
+
+        <p class="indicator">Dashboard</p>
+
         <div class="profile">
           <p class="profile-user"></p>
           <img src="../images/arrow-down.svg" alt="" class="profile-dropdown" />
@@ -84,12 +87,6 @@
             >
               <img src="../images/close-btn.svg" alt="" />
             </button>
-            <!-- <li>
-              <img src="../images/settings.svg" alt="" /><a
-                href="../pages/settings.html"
-                >Settings</a
-              >
-            </li> -->
             <li>
               <img src="../images/logout.svg" alt="" /><a href="" class="logout"
                 >Logout</a
@@ -99,7 +96,7 @@
         </div>
       </nav>
     </header>
-    <main class="dashboard-main">
+    <main class="dashboard-main dashboard-index">
       <ul class="side-bar">
         <li>
           <img src="../images/global-menu.svg" alt="" /><a
@@ -138,7 +135,28 @@
         </li>
       </ul>
 
-      <div class="main-content" id="dashboard-main-content"></div>
+      <div class="main-content" id="dashboard-main-content">
+        <img src="../images/refresh.svg" alt="" class="refresh" />
+        <div class="insights">
+          <div class="todo-insights">
+            <div class="pending">
+              <h2 class="todo-insights-heading-pending">Pending Tasks</h2>
+              <ul class="pending-list"></ul>
+            </div>
+
+            <div class="done">
+              <h2 class="todo-insights-heading-done">Completed Tasks</h2>
+              <ul class="done-list"></ul>
+            </div>
+          </div>
+
+          <div class="firstNote">
+            <h2>Your Recent Note</h2>
+            <div class="firstNote-matter"></div>
+            <button class="seeNotes">See All</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script type="module" src="../js/dashboard.js"></script>

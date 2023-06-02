@@ -1,6 +1,6 @@
 import { supabase } from '../lib/client.js';
 
-// sticky feature
+// sticky notes feature
 
 // add note
 
@@ -14,26 +14,35 @@ const cancelNoteBtn = document.querySelector('.card-footer-cancel');
 
 let userId = localStorage.getItem('userId');
 async function loadData() {
-  // e.preventDefault();
-
   const { data: notesLoad, errorLoad } = await supabase
     .from('notes')
     .select('*')
-    .eq('user_id', userId);
-  // console.log(errorLoad);
-  // console.log(notesLoad);
+    .eq('user_id', userId)
+    .order('id', { ascending: true });
 
   notesLoad.forEach((note) => {
     notesContainer.insertAdjacentHTML(
       'beforeend',
-      `        <div class="sticky__card" id="note-${note.id}">
-    <div class="sticky-initial">
-    <input type="text" class="card__heading display-ch" id="heading-${note.id}" value="${note.heading}" readonly>
-
-    <textarea name="" class="note-area display-na" cols="30" rows="8" id="content-${note.id}" readonly>${note.content}</textarea>
-</div>
-<div class="card__footer"> <div class="note-btns"><button class="edit-note-btn" name=${note.id}>  <img src="../images/edit-icon.svg" alt="" class="edit-note-icon"></button> <button class="delete-note-btn" name=${note.id}> <img src="../images/delete-btn.svg" alt="" class="delete-note-icon" ></button></div> </div>
-</div>`
+      `
+      <div class="sticky__card" id="note-${note.id}">
+      <div class="sticky-initial">
+      <input type="text" class="card__heading display-ch" 
+      id="heading-${note.id}" value="${note.heading}" readonly>
+      <textarea name="" class="note-area display-na" cols="30" rows="8" 
+      id="content-${note.id}" readonly>${note.content}</textarea>
+      </div>
+      <div class="card__footer"> 
+      <div class="note-btns">
+      <button class="edit-note-btn" name=${note.id}>  
+      <img src="../images/edit-icon.svg" alt="" class="edit-note-icon">
+      </button>
+      <button class="delete-note-btn" name=${note.id}> 
+      <img src="../images/delete-btn.svg" alt="" class="delete-note-icon" >
+      </button>
+      </div>
+      </div>
+      </div>
+      `
     );
   });
 
@@ -45,7 +54,8 @@ async function loadData() {
 
       document.querySelector(`[id="heading-${i}"]`).readOnly = false;
       document.querySelector(`[id="content-${i}"]`).readOnly = false;
-      // console.log('readonly changed of', i);
+      document.querySelector(`[id="content-${i}"]`).focus();
+
       document
         .querySelector(`[id="heading-${i}"]`)
         .addEventListener('change', async function handleChange() {
@@ -83,13 +93,10 @@ async function loadData() {
       location.reload();
     });
   });
-
-  // location.reload();
 }
 
 function newNote() {
   async function insertNote() {
-    // e.preventDefault();
     const { data: noteData, error: noteError } = await supabase
       .from('notes')
       .insert([
@@ -107,22 +114,24 @@ function newNote() {
     alert('Please fill both the fields!');
     return;
   }
-  // console.log('added');
-  // location.reload();
+
   noteHeading.value = null;
   noteContent.value = null;
-  // location.reload();
-  // loadData();
 }
 
-addNoteBtn.addEventListener('click', () => {
-  // e.preventDefault();
+addNoteBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   newNote();
-  // console.log('Add clicked');
 });
-cancelNoteBtn.addEventListener('click', () => {
+cancelNoteBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   location.reload();
-  // console.log('cancelled');
 });
 
 loadData();
+
+const refreshBtn = document.querySelector('.refresh');
+
+refreshBtn.addEventListener('click', () => {
+  location.reload();
+});
