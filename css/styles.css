@@ -1239,3 +1239,41 @@ main {
     font-weight: bold;
     color: #b49dfe;
     display: initial; } }
+
+#additional-main-content .chatbot-container {
+  min-width: 320px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d121f;
+  padding: 2rem;
+  border-radius: 0.5rem; }
+  #additional-main-content .chatbot-container h1 {
+    color: #ffffff; }
+  #additional-main-content .chatbot-container .chatbot-response {
+    color: #b49dfe;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #1a202c;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%; }
+  #additional-main-content .chatbot-container input {
+    width: 100%;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #1a202c;
+    color: #90a3bf;
+    font-weight: bold; }
+  #additional-main-content .chatbot-container input::placeholder {
+    color: #90a3bf; }
+
+@media screen and (min-width: 720px) {
+  #additional-main-content .chatbot-container {
+    min-width: 400px;
+    max-width: 400px; } }

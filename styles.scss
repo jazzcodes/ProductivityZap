@@ -1638,3 +1638,56 @@ main {
     display: initial;
   }
 }
+
+#additional-main-content {
+  .chatbot-container {
+    min-width: 320px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-700;
+    padding: 2rem;
+    border-radius: 0.5rem;
+
+    h1 {
+      color: $primary-0;
+    }
+
+    .chatbot-response {
+      color: $primary-300;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: $bg-color;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 0.5rem;
+      outline: none;
+      border: 0;
+      padding: 1rem;
+      font-size: 1.5rem;
+      background-color: $bg-color;
+      color: $secondary-300;
+      font-weight: bold;
+    }
+
+    input::placeholder {
+      color: $secondary-300;
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  #additional-main-content {
+    .chatbot-container {
+      min-width: 400px;
+      max-width: 400px;
+    }
+  }
+}

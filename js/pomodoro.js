@@ -24,17 +24,8 @@ function pomodoroSpl() {
       seconds = 60;
     }
 
-    if (seconds < 10) {
-      leadingSeconds = '0' + seconds.toString();
-    } else {
-      leadingSeconds = seconds;
-    }
-
-    if (minutes < 10) {
-      leadingMinutes = '0' + minutes.toString();
-    } else {
-      leadingMinutes = minutes;
-    }
+    leadingSeconds = seconds < 10 ? '0' + seconds.toString() : seconds;
+    leadingMinutes = minutes < 10 ? '0' + minutes.toString() : minutes;
 
     if (seconds >= 0 && minutes >= 0) {
       initialTime.innerText = `${leadingMinutes}:${leadingSeconds}`;
