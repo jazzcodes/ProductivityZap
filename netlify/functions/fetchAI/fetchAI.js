@@ -1,17 +1,28 @@
-// Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+const apiKey = process.env.OPENAI_API_KEY;
 const handler = async (event) => {
   try {
-    const subject = event.queryStringParameters.name || 'World'
+    const url =
+      'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
+    const response = fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: 'text-davinci-003',
+        prompt: event.body,
+        max_tokens: 50,
+      }),
+    });
+    const subject = event.queryStringParameters.name || 'World';
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Hello ${subject}` }),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
+      body: JSON.stringify({ response }),
+    };
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return { statusCode: 500, body: error.toString() };
   }
-}
+};
 
-module.exports = { handler }
+module.exports = { handler };

@@ -7,7 +7,7 @@ const chatbotResponse = document.querySelector('.chatbot-response');
 
 function fetchBotReply() {
   const url =
-    'https://luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
+    'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
   fetch(url, {
     method: 'POST',
     headers: {
