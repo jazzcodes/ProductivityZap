@@ -134,17 +134,46 @@
 
       <div class="main-content" id="additional-main-content">
         <div class="chatbot-container">
-          <h1>Chatbot</h1>
-          <p class="chatbot-response">
-            Hey there! I can aid you in doing your tasks :)
-          </p>
+          <h1>Zap AI</h1>
+          <p class="chatbot-intro">
+            Hey there! You can chat with me anytime. Not only that, I can aid
+            you in adding a to-do task or a note! :) <br />
+            <br />
 
-          <input type="text" id="chatbot-input" placeholder="Enter your task" />
+            Please follow the correct format - <br />
+            <br />
+            1. Make sure to mention "todo" & write the todo task within inverted
+            commas as shown -
+            <span class="AI-example"> Please add a todo "Science HW"</span>
+            <span class="AI-example">
+              Can you add a todo "Math HW" please?</span
+            >
+            <br />
+            2. Make sure to mention "note" & do write the heading and content of
+            the note separately within the inverted commas in the same order as
+            shown -
+            <span class="AI-example">
+              Please add a note with the heading "Reminder Event" and content
+              "send invitations & emails".</span
+            >
+          </p>
+          <p class="chatbot-response"></p>
+
+          <input
+            type="text"
+            id="chatbot-input"
+            placeholder="Enter your command"
+          />
         </div>
       </div>
     </main>
 
     <script type="module" src="../js/dashboard.js"></script>
     <script type="module" src="../js/additional.js"></script>
+    <script type="module" src="../lib/client.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
   </body>
 </html>

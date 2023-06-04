@@ -1655,7 +1655,8 @@ main {
       color: $primary-0;
     }
 
-    .chatbot-response {
+    .chatbot-response,
+    .chatbot-intro {
       color: $primary-300;
       font-size: 1.5rem;
       font-weight: bold;
@@ -1663,6 +1664,10 @@ main {
       padding: 1rem;
       border-radius: 0.5rem;
       width: 100%;
+    }
+
+    .chatbot-response {
+      display: none;
     }
 
     input {
@@ -1679,6 +1684,11 @@ main {
 
     input::placeholder {
       color: $secondary-300;
+    }
+
+    .AI-example {
+      display: block;
+      color: $primary-200;
     }
   }
 }

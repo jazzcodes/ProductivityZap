@@ -1252,7 +1252,8 @@ main {
   border-radius: 0.5rem; }
   #additional-main-content .chatbot-container h1 {
     color: #ffffff; }
-  #additional-main-content .chatbot-container .chatbot-response {
+  #additional-main-content .chatbot-container .chatbot-response,
+  #additional-main-content .chatbot-container .chatbot-intro {
     color: #b49dfe;
     font-size: 1.5rem;
     font-weight: bold;
@@ -1260,6 +1261,8 @@ main {
     padding: 1rem;
     border-radius: 0.5rem;
     width: 100%; }
+  #additional-main-content .chatbot-container .chatbot-response {
+    display: none; }
   #additional-main-content .chatbot-container input {
     width: 100%;
     border-radius: 0.5rem;
@@ -1272,6 +1275,9 @@ main {
     font-weight: bold; }
   #additional-main-content .chatbot-container input::placeholder {
     color: #90a3bf; }
+  #additional-main-content .chatbot-container .AI-example {
+    display: block;
+    color: #cebefe; }
 
 @media screen and (min-width: 720px) {
   #additional-main-content .chatbot-container {

@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "netlify-cli": "^15.3.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
@@ -24,8 +25,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
+    "openai": "^3.2.1",
     "prettier": "^2.8.8"
   }
-
-  
 }
