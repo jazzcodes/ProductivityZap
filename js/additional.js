@@ -1,18 +1,18 @@
 import { supabase } from '../lib/client.js';
+import { process } from '../lib/env.js';
 
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
 
-// const apiKey = process.env.OPENAI_API_KEY;
+const apiKey = process.env.OPENAI_API_KEY;
 
 function fetchBotReply() {
-  const url =
-    'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
+  const url = 'https://api.openai.com/v1/completions';
   fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      // Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
       model: 'text-davinci-003',
