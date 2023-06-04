@@ -3,7 +3,7 @@ const handler = async (event) => {
   try {
     const url =
       'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
-    const response = fetch(url, {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -14,12 +14,7 @@ const handler = async (event) => {
         prompt: event.body,
         max_tokens: 50,
       }),
-    });
-    const subject = event.queryStringParameters.name || 'World';
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ response }),
-    };
+    }).then((response) => response.json());
   } catch (error) {
     return { statusCode: 500, body: error.toString() };
   }
