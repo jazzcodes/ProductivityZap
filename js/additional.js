@@ -5,7 +5,8 @@ const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
 
 // const apiKey = process.env.OPENAI_API_KEY;
-let conversationStr = '';
+let str = '';
+
 function fetchBotReply() {
   chatbotResponse.innerText = 'Loading...';
   // const url = 'https://api.openai.com/v1/completions';
@@ -16,15 +17,12 @@ function fetchBotReply() {
     headers: {
       'Content-Type': 'application/json',
       // Authorization: `Bearer ${apiKey}`,
-      Accept: 'application/json',
     },
-    body: conversationStr,
-    // body: JSON.stringify({
-    //   model: 'text-davinci-003',
-    //   prompt: `Behave like a friendly chatbot. Whenever user asks to do ${chatbotInput.value},
-    //   affirm the user that it would be done positively.`,
-    //   max_tokens: 50,
-    // }),
+    body: JSON.stringify({
+      model: 'text-davinci-003',
+      prompt: str,
+      max_tokens: 50,
+    }),
   })
     .then((response) => response.json())
     .then((data) => (chatbotResponse.innerText = data.choices[0].text.trim()));
