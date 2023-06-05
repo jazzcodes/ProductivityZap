@@ -16,6 +16,7 @@ function fetchBotReply() {
     headers: {
       'Content-Type': 'application/json',
       // Authorization: `Bearer ${apiKey}`,
+      Accept: 'application/json',
     },
     body: conversationStr,
     // body: JSON.stringify({
