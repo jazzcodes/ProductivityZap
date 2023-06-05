@@ -1,10 +1,10 @@
 import { supabase } from '../lib/client.js';
-// import { process } from '../lib/env.js';
-import { apiKey } from '../netlify/functions/fetchAI/fetchAI.js';
+import { process } from '../lib/env.js';
+
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
 
-// const apiKey = process.env.OPENAI_API_KEY;
+const apiKey = process.env.OPENAI_API_KEY;
 
 function fetchBotReply() {
   chatbotResponse.innerText = 'Loading...';

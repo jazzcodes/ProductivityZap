@@ -1,5 +1,3 @@
-export { apiKey };
-const apiKey = env.OPENAI_API_KEY;
 // const apiKey = process.env.OPENAI_API_KEY;
 // const handler = async (event) => {
 //   const url = 'https://api.openai.com/v1/completions';
