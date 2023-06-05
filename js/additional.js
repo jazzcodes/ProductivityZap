@@ -1,5 +1,5 @@
 import { supabase } from '../lib/client.js';
-import { process } from '../lib/env.js';
+// import { process } from '../lib/env.js';
 
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
