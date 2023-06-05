@@ -4,22 +4,26 @@ import { process } from '../lib/env.js';
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
 
-const apiKey = process.env.OPENAI_API_KEY;
-
+// const apiKey = process.env.OPENAI_API_KEY;
+let conversationStr = '';
 function fetchBotReply() {
-  const url = 'https://api.openai.com/v1/completions';
+  chatbotResponse.innerText = 'Loading...';
+  // const url = 'https://api.openai.com/v1/completions';
+  const url =
+    'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
   fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
+      // Authorization: `Bearer ${apiKey}`,
     },
-    body: JSON.stringify({
-      model: 'text-davinci-003',
-      prompt: `Behave like a friendly chatbot. Whenever user asks to do ${chatbotInput.value}, 
-      affirm the user that it would be done positively.`,
-      max_tokens: 50,
-    }),
+    body: conversationStr,
+    // body: JSON.stringify({
+    //   model: 'text-davinci-003',
+    //   prompt: `Behave like a friendly chatbot. Whenever user asks to do ${chatbotInput.value},
+    //   affirm the user that it would be done positively.`,
+    //   max_tokens: 50,
+    // }),
   })
     .then((response) => response.json())
     .then((data) => (chatbotResponse.innerText = data.choices[0].text.trim()));
