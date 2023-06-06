@@ -17,7 +17,7 @@ async function fetchBotReply() {
       'content-type': 'text/plain',
       'Access-Control-Allow-Origin': url,
     },
-    body: chatbotInput,
+    body: chatbotInput.value,
   });
   const data = await response.json();
   chatbotResponse.innerText = data.reply.choices[0].text.trim();
