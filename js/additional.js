@@ -1,5 +1,5 @@
 import { supabase } from '../lib/client.js';
-import { process } from '../lib/env.js';
+// import { process } from '../lib/env.js';
 //  Note: Change to dotenv package code
 
 const chatbotInput = document.getElementById('chatbot-input');
