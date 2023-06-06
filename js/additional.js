@@ -21,7 +21,7 @@ async function fetchBotReply() {
   });
   const data = await response.json();
   chatbotResponse.innerText = data.reply.choices[0].text.trim();
-  console.log(data);
+  console.log(data.reply.choices[0].text.trim());
   let userId = localStorage.getItem('userId');
 
   if (
