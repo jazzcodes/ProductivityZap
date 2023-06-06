@@ -11,7 +11,7 @@ const handler = async (event) => {
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: `Behave like a friendly chatbot.
-    Whenever user asks to do some task,
+    Whenever user asks to do ${event.body},
     affirm the user that it would be done positively.`,
       max_tokens: 50,
     });
