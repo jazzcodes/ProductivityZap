@@ -5,14 +5,13 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-const chatbotInput = document.getElementById('chatbot-input');
 
 const handler = async (event) => {
   try {
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: `Behave like a friendly chatbot.
-    Whenever user asks to do ${chatbotInput.value},
+    Whenever user asks to do some task,
     affirm the user that it would be done positively.`,
       max_tokens: 50,
     });
