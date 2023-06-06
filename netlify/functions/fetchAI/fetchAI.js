@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
-import { chatbotInput } from '../../../js/additional';
+import { chatbotInput } from '../../../js/additional.js';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
