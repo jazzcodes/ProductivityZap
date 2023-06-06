@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "vite build",
     "css": "node-sass --include-path scss styles.scss css/styles.css",
-    "watch": "nodemon -e scss -x npm run css"
+    "watch": "nodemon -e scss -x npm run css",
+    "start": "vite",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +30,7 @@
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
     "openai": "^3.2.1",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "vite": "^4.3.9"
   }
 }

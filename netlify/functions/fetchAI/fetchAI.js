@@ -1,20 +1,27 @@
-// const apiKey = process.env.OPENAI_API_KEY;
-// const handler = async (event) => {
-//   const url = 'https://api.openai.com/v1/completions';
+import { Configuration, OpenAIApi } from 'openai';
 
-//   fetch(url, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Authorization: `Bearer ${apiKey}`,
-//     },
-//     body: JSON.stringify({
-//       model: 'text-davinci-003',
-//       prompt: `Behave like a friendly chatbot. Whenever user asks to do ${chatbotInput.value},
-//    affirm the user that it would be done positively.`,
-//       max_tokens: 50,
-//     }),
-//   }).then((response) => response.json());
-// };
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
-// module.exports = { handler };
+const openai = new OpenAIApi(configuration);
+
+const handler = async (event) => {
+  try {
+    const response = await openai.createCompletion({
+      model: 'text-davinci-003',
+      prompt: `Behave like a friendly chatbot.`,
+      max_tokens: 50,
+    });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        reply: response.data,
+      }),
+    };
+  } catch (error) {
+    return { statusCode: 500, body: error.toString() };
+  }
+};
+
+module.exports = { handler };

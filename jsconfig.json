@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./js/*"],
+      "openai/*": ["./node_modules/openai/*"]
+    }
+  },
+  "include": ["js/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -3,3 +3,4 @@ dist
 lib/env.js
 # Local Netlify folder
 .netlify
+.env
