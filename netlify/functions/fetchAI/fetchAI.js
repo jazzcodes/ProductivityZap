@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai';
+import { chatbotInput } from '../../../js/additional';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -10,7 +11,9 @@ const handler = async (event) => {
   try {
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
-      prompt: `Behave like a friendly chatbot.`,
+      prompt: `Behave like a friendly chatbot.
+    Whenever user asks to do ${chatbotInput.value},
+    affirm the user that it would be done positively.`,
       max_tokens: 50,
     });
     return {

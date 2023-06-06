@@ -94,3 +94,5 @@ chatbotInput.addEventListener('keypress', function (event) {
 // })
 //   .then((response) => response.json())
 //   .then((data) => (chatbotResponse.innerText = data.choices[0].text.trim()));
+
+export { chatbotInput as chatbotInput };
