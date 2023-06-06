@@ -9,12 +9,13 @@ async function fetchBotReply() {
   chatbotResponse.innerText = 'Loading...';
   // const url = 'https://api.openai.com/v1/completions';
   const url =
-    'https://cors-anywhere.herokuapp.com/https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
+    'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
 
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'content-type': 'text/plain',
+      'Access-Control-Allow-Origin': url,
     },
     body: chatbotInput,
   });
