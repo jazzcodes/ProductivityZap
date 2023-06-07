@@ -11,13 +11,11 @@ const mobileMenuOpenBtn = document.querySelector('.dashboard-mobile-menu-icon');
 function closeGlobalMenu() {
   mobileMenu.style.display = 'none';
   mobileMenuOpenBtn.style.display = 'initial';
-  // console.log('mobile menu closed');
 }
 
 function openGlobalMenu() {
   mobileMenu.style.display = 'initial';
   mobileMenuOpenBtn.style.display = 'none';
-  // console.log('mobile menu opened');
 }
 
 globalMenuCloseBtn.addEventListener('click', closeGlobalMenu);
@@ -32,13 +30,11 @@ const mobileMenuOpenBtnProfile = document.querySelector('.profile-dropdown');
 function closeProfileMenu() {
   mobileMenuProfile.style.display = 'none';
   mobileMenuOpenBtnProfile.style.display = 'initial';
-  // console.log('profile menu closed');
 }
 
 function openProfileMenu() {
   mobileMenuProfile.style.display = 'flex';
   mobileMenuOpenBtnProfile.style.display = 'none';
-  // console.log('profile menu opened');
 }
 
 globalMenuCloseBtnProfile.addEventListener('click', closeProfileMenu);
@@ -46,11 +42,9 @@ mobileMenuOpenBtnProfile.addEventListener('click', openProfileMenu);
 
 async function loadUser() {
   const { data } = await supabase.auth.getUser();
-  // console.log(data);
-  // console.log(data['user']['email']);
+
   const username = document.querySelector('.profile-user');
   username.innerText = data['user']['email'];
-  console.log(data);
   localStorage.setItem('userId', data['user']['id']);
   localStorage.setItem('loggedUser', JSON.stringify(data['user']['email']));
 }

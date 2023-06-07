@@ -4,19 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "vite build",
     "css": "node-sass --include-path scss styles.scss css/styles.css",
-    "watch": "nodemon -e scss -x npm run css"
+    "watch": "nodemon -e scss -x npm run css",
+    "start": "vite",
+    "dev": "vite",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "netlify-cli": "^15.3.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
@@ -24,8 +30,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
-    "prettier": "^2.8.8"
+    "openai": "^3.2.1",
+    "prettier": "^2.8.8",
+    "vite": "^4.3.9"
   }
-
-  
 }

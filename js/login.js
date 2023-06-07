@@ -3,12 +3,12 @@ import { supabase } from '../lib/client.js';
 const loginBtn = document.querySelector('.login-btn');
 const loginPassword = document.querySelector('.login-password');
 const loginEmail = document.querySelector('.login-email');
+const loader = document.querySelector('.loader');
 
 loginBtn.addEventListener('click', async function loginUser(e) {
-  console.log(loginEmail.value);
-  console.log(loginPassword.value);
-
   e.preventDefault();
+
+  loader.style.display = 'initial';
 
   let { data: data, error: error } = await supabase.auth.signInWithPassword({
     email: loginEmail.value,
@@ -18,7 +18,8 @@ loginBtn.addEventListener('click', async function loginUser(e) {
   if (error) {
     alert(error.message);
   } else {
-    console.log(data);
+    loginEmail.value = '';
+    loginPassword.value = '';
   }
 });
 
@@ -33,10 +34,7 @@ loginPassword.addEventListener('keypress', function (event) {
 async function checkAuth() {
   const user = supabase.auth.user();
 
-  console.log('Checking auth...', user);
-
   if (user) {
-    console.log('User is logged in');
     window.open('../pages/dashboard.html', '_self');
   } else {
     window.open('../pages/login.html', '_self');
@@ -55,7 +53,6 @@ supabase.auth.onAuthStateChange(async (event) => {
 
 // Add this function to handle the auth state change
 function handleAuthStateChange(event, session) {
-  console.log('Auth state changed:', event, session);
   checkAuth();
 }
 

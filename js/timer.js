@@ -23,23 +23,9 @@ function stopWatch() {
     }
   }
 
-  if (seconds < 10) {
-    leadingSeconds = '0' + seconds.toString();
-  } else {
-    leadingSeconds = seconds;
-  }
-
-  if (minutes < 10) {
-    leadingMinutes = '0' + minutes.toString();
-  } else {
-    leadingMinutes = minutes;
-  }
-
-  if (hours < 10) {
-    leadingHours = '0' + hours.toString();
-  } else {
-    leadingHours = hours;
-  }
+  leadingSeconds = seconds < 10 ? '0' + seconds.toString() : seconds;
+  leadingMinutes = minutes < 10 ? '0' + minutes.toString() : minutes;
+  leadingHours = hours < 10 ? '0' + hours.toString() : hours;
 
   document.getElementById(
     'timer'
