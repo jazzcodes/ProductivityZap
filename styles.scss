@@ -444,7 +444,7 @@ body {
         .list-matter {
           color: $primary-200;
           font-size: 1.5rem;
-          font-weight: bold;
+          font-weight: 500;
         }
       }
 
@@ -605,11 +605,13 @@ body {
     text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
   }
 
-  .benefits-content {
+  .benefits-content,
+  ul {
     color: $secondary-200;
     font-size: 1.5rem;
     line-height: 1.5;
-    font-weight: bold;
+    font-weight: 500;
+    padding-left: 0;
   }
 
   .benefits-imgs {
@@ -631,9 +633,10 @@ body {
       text-align: center;
     }
 
-    .benefits-content {
+    .benefits-content,
+    ul {
       font-size: 1.5rem;
-      text-align: center;
+      text-align: justify;
       max-width: 100rem;
     }
 
@@ -1038,6 +1041,7 @@ main {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  height: 100vh;
 }
 
 .insights {
@@ -1072,7 +1076,7 @@ main {
         li {
           color: $secondary-300;
           font-size: 1.5rem;
-          font-weight: bold;
+          font-weight: 600;
           margin-bottom: 1rem;
         }
       }
@@ -1084,7 +1088,6 @@ main {
   background-color: $secondary-700;
   border-radius: 0.5rem;
   padding: 2rem;
-  // width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1118,7 +1121,7 @@ main {
         background-color: $secondary-700;
         color: $secondary-300;
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: 600;
         outline: none;
         border: 0;
         resize: none;
@@ -1321,7 +1324,7 @@ main {
 
       .note-area {
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
         color: $secondary-200;
         width: 100%;
         outline: none;
@@ -1619,6 +1622,21 @@ main {
         color: $primary-300;
       }
     }
+
+    .loader {
+      width: 100px;
+      align-self: center;
+      display: none;
+    }
+
+    .success,
+    .invite {
+      color: $primary-300;
+      font-size: 2rem;
+      font-weight: 600;
+      align-self: center;
+      display: none;
+    }
   }
 }
 
@@ -1657,9 +1675,9 @@ main {
 
     .chatbot-response,
     .chatbot-intro {
-      color: $primary-300;
+      color: $primary-200;
       font-size: 1.5rem;
-      font-weight: bold;
+      font-weight: 600;
       background-color: $bg-color;
       padding: 1rem;
       border-radius: 0.5rem;
@@ -1679,16 +1697,18 @@ main {
       font-size: 1.5rem;
       background-color: $bg-color;
       color: $secondary-300;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     input::placeholder {
-      color: $secondary-300;
+      color: $secondary-100;
+      color: #9f84fd;
     }
 
     .AI-example {
       display: block;
-      color: $primary-200;
+      color: $secondary-200;
+      margin-top: 1rem;
     }
   }
 }

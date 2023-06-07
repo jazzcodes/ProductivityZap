@@ -1,13 +1,11 @@
 import { supabase } from '../lib/client.js';
-// import { process } from '../lib/env.js';
-//  Note: Change to dotenv package code
 
 const chatbotInput = document.getElementById('chatbot-input');
 const chatbotResponse = document.querySelector('.chatbot-response');
 
 async function fetchBotReply() {
   chatbotResponse.innerText = 'Loading...';
-  // const url = 'https://api.openai.com/v1/completions';
+
   const url =
     'https://deploy-preview-17--luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
 
@@ -21,7 +19,6 @@ async function fetchBotReply() {
   });
   const data = await response.json();
   chatbotResponse.innerText = data.reply.choices[0].text.trim();
-  console.log(data.reply.choices[0].text.trim());
   let userId = localStorage.getItem('userId');
 
   if (
@@ -78,22 +75,5 @@ chatbotInput.addEventListener('keypress', function (event) {
     fetchBotReply();
   }
 });
-
-// fetch(url, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     Authorization: `Bearer ${apiKey}`,
-//   },
-//   body: JSON.stringify({
-//     model: 'text-davinci-003',
-//     prompt: `Behave like a friendly chatbot.
-//     Whenever user asks to do ${chatbotInput.value},
-//     affirm the user that it would be done positively.`,
-//     max_tokens: 50,
-//   }),
-// })
-//   .then((response) => response.json())
-//   .then((data) => (chatbotResponse.innerText = data.choices[0].text.trim()));
 
 export { chatbotInput as chatbotInput };
