@@ -6,8 +6,7 @@ const chatbotResponse = document.querySelector('.chatbot-response');
 async function fetchBotReply() {
   chatbotResponse.innerText = 'Loading...';
 
-  const url =
-    'https://luxury-hotteok-fb50c4.netlify.app/.netlify/functions/fetchAI';
+  const url = 'https://productivityzap.netlify.app/.netlify/functions/fetchAI';
 
   const response = await fetch(url, {
     method: 'POST',
