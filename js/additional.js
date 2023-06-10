@@ -74,5 +74,3 @@ chatbotInput.addEventListener('keypress', function (event) {
     fetchBotReply();
   }
 });
-
-export { chatbotInput as chatbotInput };

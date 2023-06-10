@@ -337,8 +337,7 @@ body {
     margin-top: 2rem; }
   #index-container .index-products h2 {
     color: #7c5cfc;
-    font-size: 3rem;
-    text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2); }
+    font-size: 3rem; }
   #index-container .index-products ul {
     list-style: none;
     padding-left: 0; }
@@ -346,11 +345,11 @@ body {
       display: flex;
       gap: 3rem; }
       #index-container .index-products ul li .list-heading {
-        color: white;
+        color: #cebefe;
         font-size: 1.5rem;
         font-weight: bold; }
       #index-container .index-products ul li .list-matter {
-        color: #cebefe;
+        color: #90a3bf;
         font-size: 1.5rem;
         font-weight: 500; }
     #index-container .index-products ul img {
@@ -363,11 +362,11 @@ body {
   #index-container .index-products ul li {
     gap: 2rem; }
     #index-container .index-products ul li .list-heading {
-      color: white;
+      color: #cebefe;
       font-size: 1.5rem;
       font-weight: bold; }
     #index-container .index-products ul li .list-matter {
-      color: #cebefe;
+      color: #90a3bf;
       font-size: 1.5rem; }
   #index-container .index-products ul img {
     width: 4rem; } }
@@ -454,8 +453,7 @@ body {
 
 .index-benefits .benefits-main-heading {
   color: #7c5cfc;
-  font-size: 3rem;
-  text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2); }
+  font-size: 3rem; }
 
 .index-benefits .benefits-content,
 .index-benefits ul {

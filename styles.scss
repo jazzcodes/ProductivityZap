@@ -424,7 +424,6 @@ body {
     h2 {
       color: $primary-500;
       font-size: 3rem;
-      text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
     }
 
     ul {
@@ -436,13 +435,13 @@ body {
         gap: 3rem;
 
         .list-heading {
-          color: white;
+          color: $primary-200;
           font-size: 1.5rem;
           font-weight: bold;
         }
 
         .list-matter {
-          color: $primary-200;
+          color: $secondary-300;
           font-size: 1.5rem;
           font-weight: 500;
         }
@@ -468,13 +467,13 @@ body {
           gap: 2rem;
 
           .list-heading {
-            color: white;
+            color: $primary-200;
             font-size: 1.5rem;
             font-weight: bold;
           }
 
           .list-matter {
-            color: $primary-200;
+            color: $secondary-300;
             font-size: 1.5rem;
           }
         }
@@ -602,7 +601,6 @@ body {
   .benefits-main-heading {
     color: $primary-500;
     font-size: 3rem;
-    text-shadow: -4px 1px 7px rgba(248, 241, 241, 0.2);
   }
 
   .benefits-content,
