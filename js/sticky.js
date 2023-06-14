@@ -108,12 +108,12 @@ function newNote() {
       ]);
   }
 
-  insertNote();
-
   if (noteContent.value == '' || noteHeading.value == '') {
     alert('Please fill both the fields!');
     return;
   }
+
+  insertNote();
 
   noteHeading.value = null;
   noteContent.value = null;
